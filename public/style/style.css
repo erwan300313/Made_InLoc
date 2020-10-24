@@ -1,0 +1,271 @@
+/* Template Style */
+body{
+    width: 100%;
+    max-width: 1440px;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.userModul{
+    height: 30px;
+    background-color: rgb(240,145,0);
+}
+
+header{
+    position: sticky;
+    top:0px;
+    height: 60px;
+    background-color: rgb(240,145,0);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 3;
+}
+
+.logo{
+    border-left: 4px solid rgb(169,69,19);
+    padding-left: 5px;
+}
+
+.logo h1{
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+.logo h1{
+    font-size: 1.em;
+    font-weight: 400;
+}
+
+nav{
+    display: inline-block;
+}
+.menu{
+    margin: 0;
+    display: flex;
+}
+
+.menu li{
+    list-style: none;
+    margin-left: 30px;
+}
+
+.menu li a{
+    text-decoration: none;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    font-size: 1.1em;
+}
+
+.fa-phone-square-alt{
+    color: rgb(169,69,19);
+    vertical-align: middle; 
+    text-shadow: 1px 1px 2px black;
+}
+
+.phoneNum{
+    color: white;
+    display: inline-block;
+    margin-left: 10px;
+    text-shadow: 1px 1px 2px black;
+}
+
+.footer_block{
+    position: relative;
+    padding-top: 20px;
+    height: 200px;
+    width: 100%;
+    background-color: rgb(20, 11, 5);
+    color: white;
+    text-align: center;
+    z-index: 2;
+}
+
+.footer_block .logo{
+    margin: auto;
+    width: 200px;    
+}
+
+.footer_social_network i{
+    color: white;
+}
+
+.footer_social_network li{
+    list-style: none;
+    padding: 10px 13px;
+    border: 1px solid white;
+}
+
+.footer_social_network{
+    width : 300px;
+    display: flex;
+    margin: 30px auto;
+    justify-content: space-between;
+    font-size: 2.2em;
+}
+/* Fin style template */
+
+/* Style banniere */
+.banner{
+   position: relative;
+   z-index: 2;
+   top: 100px;
+   width: 50%;
+   text-align: center;
+   color: white;
+}
+
+.banner_img{
+    position: fixed;
+    top:60px;
+    z-index: 1;
+}
+
+.banner h3{
+    font-size: 2em;
+    margin: 0 auto;
+    text-shadow: 1px 1px 2px black; 
+}
+
+.banner p{
+    font-size: 2.2em;
+    width:70%;
+    margin: 0 auto 30px auto;
+    text-shadow: 1px 1px 2px black;
+}
+
+.banner a{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    background-color: rgb(169,69,19);
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px black;
+}
+/* style content body */
+.content_body{
+    position: relative;
+    z-index: 2;
+    background-color: rgb(245, 245, 245);
+}
+
+.content_body article{
+    width: 80%;
+    margin: auto; 
+    padding-top: 15px;
+}
+
+.block_invisible{
+    height: 200px;
+} 
+
+#services, #weather{
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgb(169,69,19);
+}
+
+.services{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service{
+    width: 300px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.service i{
+    background-color: rgb(241, 198, 56);
+    padding:15px;
+    border-radius: 25px;
+    font-size: 2em;
+}
+
+.weather{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.weather p{
+    width: 50%;
+    font-size: 1.2em;
+}
+.weather img{
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px black;
+}
+
+/* Slider style and block*/
+.slider_moto h2{
+    text-align: center;
+}
+
+#slider_moto{
+    position: relative;
+    margin-bottom: -3px;
+    height: 450px;
+}
+
+#slider_moto p{
+    margin:0;
+}
+
+.slideImg{
+    border-radius: 20px;
+    left: 55%;;
+}
+
+.slideImg, .slideTxt{
+    width: 50%;
+    position: absolute;
+    top:0;
+}
+
+.slideTxt{
+    text-align: center;
+    width: 40%;
+    font-size: 1.5em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.slide{
+    opacity: 0;
+    transition: 1s;
+}
+
+.visible{
+    opacity: 1;
+    transition: 1s;
+}
+
+.rightArrow{
+    right: 30%;
+}
+
+.leftArrow{
+    left: 30%;
+}
+
+#playPauseButton{
+    left : 50%;
+    transform: translateX(-50%);
+}
+
+#playPauseButton, .rightArrow, .leftArrow{
+    position: absolute;
+    bottom : 20px;
+    padding : 10px;
+    z-index: 1;
+    border: 3px solid rgb(169,69,19);
+    border-radius: 30px;
+    color :rgb(241, 198, 56);
+    background-color: rgb(169,69,19);
+}
