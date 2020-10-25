@@ -10,7 +10,6 @@ class Router {
     try {
       // Fusion des paramètres GET et POST de la requête
       $requete = new Requete(array_merge($_GET, $_POST));
-
       $controller = $this->creerControleur($requete);
       $action = $this->creerAction($requete);
 

@@ -18,7 +18,7 @@
             <nav>
                 <ul class="menu">
                     <li class="buttonMenu home"><a href="index.php">Accueil</a></li>
-                    <li class="buttonMenu about"><a href="index.php?action=about#ancre">A propos</a></li>
+                    <li class="buttonMenu about"><a href="index.php?controller=about&amp;action=aboutIndex&amp;test=bonjour">A propos</a></li>
                     <li class="buttonMenu gallery"><a href="index.php?action=blog#ancre">Gallery</a></li>
                     <li class="buttonMenu team"><a href="index.php?action=contact#ancre">Notre Equipe</a></li>
                     <li class="buttonMenu forum"><a href="index.php?action=contact#ancre">Forum</a></li>

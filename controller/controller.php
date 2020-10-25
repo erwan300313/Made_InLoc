@@ -1,5 +1,7 @@
 <?php
 
+require_once('model/aboutManager.php');
+
 abstract class Controller{
 
   // Action à réaliser
