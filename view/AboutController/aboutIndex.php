@@ -19,12 +19,13 @@
                 <i class="fas fa-motorcycle"></i>
                 <h3>Location</h3>
                 <p>Louez pour 1, 2, 3 ou plusieurs jours en fonction de vos envies.</p>
-                <a href="index.php?controller=about&amp;action=aboutRent&amp;service=rent">En savoir plus</a>
+                <a href="index.php?controller=about&amp;action=aboutRent">En savoir plus</a>
             </div>
             <div class="service">
                 <i class="fas fa-route"></i>
                 <h3>Circuit decouverte</h3>
                 <p>Decouvrez la martinique grace à un de nos nombreux circuit decouverte.</p>
+                <a href="index.php?controller=about&amp;action=aboutCircuit">En savoir plus</a>
             </div>
             <div class="service">
                 <i class="fas fa-biking"></i>

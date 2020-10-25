@@ -55,7 +55,7 @@
         </aside>   
     </article>
     <article class="slider_moto">
-        <h2>Tout nos bolide</h2>
+        <h2>Tout nos bolides</h2>
         <div id="slider_moto"><img src="../../public/img/moto/" alt=""></div>
     </article>
     

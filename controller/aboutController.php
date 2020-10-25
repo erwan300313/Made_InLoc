@@ -23,4 +23,9 @@ Class AboutController extends Controller{
         $get800Price = $this->aboutManager->getPrice(800);
         $this->genererVue(array('get125Price' => $get125Price, 'get800Price' => $get800Price)); 
     }
+
+    public function AboutCircuit(){
+        $circuits = $this->aboutManager->getCircuits();
+        $this->genererVue(array('circuits' => $circuits)); 
+    }
 }
