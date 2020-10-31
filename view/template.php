@@ -34,7 +34,7 @@
             <div><i class="fas fa-phone-square-alt fa-2x"></i><p class="phoneNum">01-02-03-04-05</p></div>
             
         </header>  
-
+        
         <section class="contentSection"> 
             <?= $content ?>
         </section>
@@ -53,12 +53,7 @@
                 <p class='copyright'>Copyright © 2020 | Bridier Corporation | Made InLoc - Location de moto en martinique </p>
             </div>
         </footer>
-        
+        <?=$script?>
         <script src="../public/js/header/headerAnim.js"></script>
-        <script src="../public/js/slider/slider.js"></script>
-        <script src="../public/js/weather/forecast.js"></script>
-        <script src="../public/js/weather/weather.js"></script>
-        <script src="../public/js/weather/map.js"></script>
-        <script src="../public/js/main.js"></script>
     </body>
 </html>

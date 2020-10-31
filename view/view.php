@@ -4,6 +4,7 @@ class ViewManager {
 
 private $file;
 private $title;
+private $script;
 
 public function __construct($action, $controleur = "") {
      $file = "view/";
@@ -16,7 +17,7 @@ public function __construct($action, $controleur = "") {
 public function generate($data) {
     $content = $this->generateFile($this->file, $data);
     $view = $this->generateFile('view/template.php',
-    array('title' => $this->title, 'content' => $content));
+    array('title' => $this->title, 'content' => $content, 'script' => $this->script));
     echo $view;
 }
 

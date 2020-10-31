@@ -1,4 +1,5 @@
 <?php $this->title = "Accueil"; ?>
+<?php $this->script ='<script src="../public/js/slider/slider.js"></script><script src="../public/js/slider/mainSlider.js"></script>'; ?>
 
 
 <img src="../../public/img/banner/index_banner.png" alt="banner_background" class="banner_img">

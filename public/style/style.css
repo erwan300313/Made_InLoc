@@ -377,8 +377,13 @@ nav{
 
 /*Style map / popup / tooltip*/
 #mapId{
-    height:900px;
-    width: 900px;
+    width: 70%;
+    height: 900px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+#weather{
 }
 
 .leaflet-tooltip-left p{
@@ -408,8 +413,14 @@ nav{
     transform: rotate(90deg);
 }
 
-#weatherDetail{
-    border: 2px solid black;
+.weatherDetail{
+    width: 30%;
+}
+
+#arrayPrev{
+    display: flex;
+    flex-wrap: wrap;
+    
 }
 
 #arrayPrev td{
@@ -418,9 +429,8 @@ nav{
     text-align: center;
 }
 
-#weatherDetail{
-    display: none;
-}
+
+
 
 
 

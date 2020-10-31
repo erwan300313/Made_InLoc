@@ -16,6 +16,11 @@ class Forecast{
     
     getInfo(foreWeather){
         
+        let arrayId = document.getElementById('weather');
+        arrayId.style.display='flex';
+        let arrayBlock = document.getElementById("arrayPrev");
+        arrayBlock.style.marginLeft = '40px';
+
         let arrayWeather = document.getElementById('arrayPrev');
         arrayWeather.innerHTML= '';
         

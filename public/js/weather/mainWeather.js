@@ -1,0 +1,1 @@
+let newMap = new Map ("mapId", 14.636793, -61.015827, 11);
