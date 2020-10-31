@@ -29,24 +29,28 @@
             </div>
             <div class="service">
                 <i class="fas fa-biking"></i>
-                <h3>Essai</h3>
-                <p>Un de nos modèles vous fait de l'oeil et vous souhiater l'essayer?</p>
+                <h3>Technique</h3>
+                <p>Vous voullez avoir plus d'info sur un de nos modèls ?</p>
+                <a href="index.php?controller=about&amp;action=aboutModel">En savoir plus</a>
             </div>
             <div class="service">
                 <i class="fas fa-graduation-cap"></i>
                 <h3>Initiation</h3>
                 <p>Vous n'avez jamais fait de moto ? Vennez essayer chez nous</p>
+                <a href="index.php?controller=about&amp;action=aboutLesson">En savoir plus</a>
             </div>
             <div class="service">
                 <i class="fas fa-tools"></i>
                 <h3>Entretien</h3>
                 <p>C'est l'heure de la vidange ? Ont s'en occupe.</p>
+                <a href="index.php?controller=about&amp;action=aboutRepair">En savoir plus</a>
             </div>
             <div class="service">
                 <i class="fas fa-tachometer-alt"></i> 
                 <h3>Préparation</h3>
                 <p>Nous préparons votre moto aux petit oignon celon vos gout et vos souhait.</p>
-            </div>    
+                <a href="index.php?controller=about&amp;action=aboutCustom">En savoir plus</a>
+            </div>  
         </aside>
     </article>
 </section>

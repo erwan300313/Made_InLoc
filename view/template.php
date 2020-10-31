@@ -6,6 +6,12 @@
         <link href="../public/style/style.css" rel="stylesheet" /> 
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/fc001796a0.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+       integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+       crossorigin=""/>
+       <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+       integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+       crossorigin=""></script>
         <meta name="viewport" content="width=device-width" />
     </head>
         
@@ -19,7 +25,7 @@
                 <ul class="menu">
                     <li class="buttonMenu home"><a href="index.php">Accueil</a></li>
                     <li class="buttonMenu about"><a href="index.php?controller=about&amp;action=aboutIndex&amp;test=bonjour">A propos</a></li>
-                    <li class="buttonMenu gallery"><a href="index.php?action=blog#ancre">Gallery</a></li>
+                    <li class="buttonMenu gallery"><a href="index.php?controller=about&amp;action=aboutMeteo">Météo</a></li>
                     <li class="buttonMenu team"><a href="index.php?action=contact#ancre">Notre Equipe</a></li>
                     <li class="buttonMenu forum"><a href="index.php?action=contact#ancre">Forum</a></li>
                     <li class="buttonMenu contact"><a href="index.php?action=contact#ancre">Contact</a></li>
@@ -47,8 +53,12 @@
                 <p class='copyright'>Copyright © 2020 | Bridier Corporation | Made InLoc - Location de moto en martinique </p>
             </div>
         </footer>
+        
         <script src="../public/js/header/headerAnim.js"></script>
         <script src="../public/js/slider/slider.js"></script>
+        <script src="../public/js/weather/forecast.js"></script>
+        <script src="../public/js/weather/weather.js"></script>
+        <script src="../public/js/weather/map.js"></script>
         <script src="../public/js/main.js"></script>
     </body>
 </html>

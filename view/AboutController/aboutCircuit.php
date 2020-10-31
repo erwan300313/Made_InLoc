@@ -11,6 +11,29 @@
 
 <div class="block_invisible"></div>
 
-<section class="content_body">
-    
+<section class="content_body">  
+    <?php
+        while ($data = $circuits->fetch()){
+        ?>
+            <article id="circuit">
+                <div class="circuit">
+                    <img src="../../public/img/circuit/<?=htmlspecialchars($data['map'])?>.png" alt="<?=htmlspecialchars($data['map'])?>">
+                    <div class="detail_circuit">
+                        <h3><?=$data['title']?></h3>
+                        <p><?=$data['content']?></p>
+                        <ul>
+                            <li>Nombre de kilometre: <?=htmlspecialchars($data['distance'])?></li>
+                            <li>Temps de parcour minimum: <?=htmlspecialchars($data['time'])?></li>
+                            <li>Cout de la balade: <?=htmlspecialchars($data['price'])?> *</li>
+                        </ul>
+                    </div>
+                </div>
+            <p>Point de vue de cette balade</p>
+            <img src="../../public/img/viewpoint/<?=htmlspecialchars($data['picture1'])?>.jpg" alt="<?=htmlspecialchars($data['picture1'])?>">
+            <img src="../../public/img/viewpoint/<?=htmlspecialchars($data['picture2'])?>.jpg" alt="<?=htmlspecialchars($data['picture2'])?>">
+            <img src="../../public/img/viewpoint/<?=htmlspecialchars($data['picture3'])?>.jpg" alt="<?=htmlspecialchars($data['picture3'])?>">
+            </article>
+        <?php 
+        }
+        ?>
 </section>

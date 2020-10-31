@@ -25,11 +25,11 @@
             while ($data = $get125Price->fetch()){
                 ?>
                 <ul>
-                    <li><?=$data['duration']?></li> 
-                    <li><?=$data['price']?>€ </li>
-                    <li><?=$data['km_included']?> Km inclus</li>
-                    <li><?=$data['extra_day']?> € / Jour sup</li>
-                    <li><?=$data['caution']?> € de caution</li>
+                    <li><?=htmlspecialchars($data['duration'])?></li> 
+                    <li><?=htmlspecialchars($data['price'])?>€ </li>
+                    <li><?=htmlspecialchars($data['km_included'])?> Km inclus</li>
+                    <li><?=htmlspecialchars($data['extra_day'])?> € / Jour sup</li>
+                    <li><?=htmlspecialchars($data['caution'])?> € de caution</li>
                     <li><p><a href="">Reserver</a></p</li>
                 </ul>
                 <?php 
@@ -44,11 +44,11 @@
             while ($data = $get800Price->fetch()){
                 ?>
                 <ul>
-                    <li><?=$data['duration']?></li> 
-                    <li><?=$data['price']?>€ </li>
-                    <li><?=$data['km_included']?> Km inclus</li>
-                    <li><?=$data['extra_day']?> € / Jour sup</li>
-                    <li><?=$data['caution']?> € de caution</li>
+                    <li><?=htmlspecialchars($data['duration'])?></li> 
+                    <li><?=htmlspecialchars($data['price'])?>€ </li>
+                    <li><?=htmlspecialchars($data['km_included'])?> Km inclus</li>
+                    <li><?=htmlspecialchars($data['extra_day'])?> € / Jour sup</li>
+                    <li><?=htmlspecialchars($data['caution'])?> € de caution</li>
                     <li><p><a href="">Reserver</a></p></li>
                 </ul>
                 <?php 

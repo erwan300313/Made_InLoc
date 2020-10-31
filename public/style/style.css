@@ -135,7 +135,7 @@ nav{
     text-shadow: 1px 1px 2px black;
 }
 
-.banner a{
+.banner a, .detail_lesson a, .detail_moto a, .detail_repair a{
     text-decoration: none;
     color: white;
     padding: 10px;
@@ -154,7 +154,7 @@ nav{
 .content_body article{
     width: 80%;
     margin: auto; 
-    padding-top: 15px;
+    padding: 15px 0px 30px 0px;
 }
 
 .block_invisible{
@@ -282,7 +282,7 @@ nav{
     justify-content: space-around;
 }
 
-#smallSize{
+#smallSize ,#circuit, #moto{
     border-bottom: 2px solid rgb(169,69,19);
 }
 .smallSize li, .midSize li{
@@ -306,6 +306,124 @@ nav{
     color:black;
     text-shadow: 1px 1px 2px black;
 }
+/* style aboutCircuit */
+
+.circuit img{
+    width:40%;
+}
+
+.circuit{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 0px; 
+}
+
+.detail_circuit{
+    font-size: 1.3em;
+    width: 40%;
+    text-align: justify;
+}
+
+/* style test */
+
+.title_pres{
+    padding-bottom: 20px;
+    font-size: 1.3em;
+    text-align: center;
+    border-bottom: 2px solid rgb(169,69,19);
+}
+#moto{
+    margin-bottom: 30px;
+}
+
+.picture_moto img{
+    width: 70%; 
+    margin: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px 2px grey;
+    margin-bottom: 10px;
+}
+
+.moto{
+    display: flex;
+    justify-content: space-between;
+}
+
+.detail_moto{
+    width: 40%;
+}
+
+.detail_moto h3{
+    text-decoration: underline;
+}
+
+/* style lesson */
+
+#lesson, #repair{
+    display: flex;
+    justify-content: space-around;
+}
+
+#lesson img, #repair img{
+    width: 40%;
+}
+
+.detail_lesson, .detail_repair{
+    width: 40%;
+    text-align: justify;
+}
+
+/*Style map / popup / tooltip*/
+#mapId{
+    height:900px;
+    width: 900px;
+}
+
+.leaflet-tooltip-left p{
+    margin: 3px;
+}
+
+.leaflet-popup-content{
+    text-align: center; 
+}
+
+.leaflet-popup-content-wrapper .leaflet-popup-content p {
+    margin: 0px;
+}
+
+.leaflet-popup-content-wrapper .leaflet-popup-content{
+    margin: 5px;
+}
+
+.leaflet-popup-close-button{
+    display: none;
+}
+
+.popupTest .leaflet-popup-tip-container{
+    top: 35%;
+    left: -10px;
+    margin-left: -20px;
+    transform: rotate(90deg);
+}
+
+#weatherDetail{
+    border: 2px solid black;
+}
+
+#arrayPrev td{
+    width: 130px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+#weatherDetail{
+    display: none;
+}
+
+
+
 
 
 

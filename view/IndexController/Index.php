@@ -27,8 +27,8 @@
             </div>
             <div class="service">
                 <i class="fas fa-biking"></i>
-                <h3>Essai</h3>
-                <p>Un de nos modèles vous fait de l'oeil et vous souhiater l'essayer?</p>
+                <h3>Technique</h3>
+                <p>Vous voullez avoir plus d'info sur un de nos modèls ?</p>
             </div>
             <div class="service">
                 <i class="fas fa-graduation-cap"></i>
@@ -55,7 +55,7 @@
         </aside>   
     </article>
     <article class="slider_moto">
-        <h2>Tout nos bolides</h2>
+        <h2>Tous nos bolides</h2>
         <div id="slider_moto"><img src="../../public/img/moto/" alt=""></div>
     </article>
     

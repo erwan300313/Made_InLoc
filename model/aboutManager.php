@@ -16,4 +16,12 @@ class AboutManager extends Manager
         $getCircuits = $this->executerRequete($sql);
         return $getCircuits;
     }
+
+    public function getMotos(){
+        $sql = 'SELECT * FROM moto';
+        $getMotos = $this->executerRequete($sql);
+        return $getMotos;
+    }
+
+
 }
