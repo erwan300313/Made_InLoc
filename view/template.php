@@ -16,18 +16,34 @@
     </head>
         
     <body>
-        <div class="userModul"></div>
+        <div class="superiorBlock"></div>
         <header>
             <div class="logo">
                 <h1>Made <strong>InLoc</strong></h1>
+            </div>
+            <div class="userModul">
+                <?php
+                if(isset($_SESSION['pseudo'])){
+                ?>
+                <p>Bonjour <?=$_SESSION['pseudo']?></p>
+                <div class="membreButton">
+                    <p><i class="fas fa-house-user"></i><a href="index.php?action=membreAreaLogin#ancre">Espace membre /</a></p>
+                    <p><i class="fas fa-sign-out-alt"></i><a href="index.php?action=logOut">Déconnexion</a></p> 
+                </div>
+                <?php
+                }else{
+                ?>
+                <p><a href="index.php?action=log"><i class="far fa-user"></i> Se connecter</a> / <a href="index.php?controller=user&amp;action=viewUserRegistration"><i class="fas fa-sign-in-alt"></i> S'inscrire</a></p>
+                <?php
+                }
+                ?>
             </div>
             <nav>
                 <ul class="menu">
                     <li class="buttonMenu home"><a href="index.php">Accueil</a></li>
                     <li class="buttonMenu about"><a href="index.php?controller=about&amp;action=aboutIndex&amp;test=bonjour">A propos</a></li>
                     <li class="buttonMenu gallery"><a href="index.php?controller=about&amp;action=aboutMeteo">Météo</a></li>
-                    <li class="buttonMenu team"><a href="index.php?action=contact#ancre">Notre Equipe</a></li>
-                    <li class="buttonMenu forum"><a href="index.php?action=contact#ancre">Forum</a></li>
+                    <li class="buttonMenu forum"><a href="index.php?controller=forum&amp;<!-- action=forumIndex -->">Forum</a></li>
                     <li class="buttonMenu contact"><a href="index.php?action=contact#ancre">Contact</a></li>
                 </ul>
             </nav>

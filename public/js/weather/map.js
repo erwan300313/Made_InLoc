@@ -42,8 +42,7 @@ class Map{
             .on('mouseout', function (e) {this.closePopup();});
             
             marker.addEventListener("click", () => {
-                //this.event(weather);
-                this.forecast = new Forecast(weather.coord.lat,weather.coord.lon, this.appId);
+                this.forecast = new Forecast(weather.coord.lat,weather.coord.lon, this.appId, weather.name);
             })
         })     
     }

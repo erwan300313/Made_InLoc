@@ -1,6 +1,8 @@
 <?php
 
 require_once('model/aboutManager.php');
+require_once('model/forumManager.php');
+require_once('model/userManager.php');
 
 abstract class Controller{
 

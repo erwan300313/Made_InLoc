@@ -6,11 +6,23 @@ body{
     font-family: 'Ubuntu', sans-serif;
 }
 
-.userModul{
+.superiorBlock{
     height: 30px;
     background-color: rgb(240,145,0);
 }
 
+
+.userModul a{
+    text-decoration: none;
+}
+
+.userModul p{
+    margin:0;
+}
+
+.membreButton{
+    display: flex;
+}
 header{
     position: sticky;
     top:0px;
@@ -27,7 +39,7 @@ header{
     padding-left: 5px;
 }
 
-.logo h1{
+.logo h1, .userModul a, .userModul{
     margin: 0;
     color: white;
     text-shadow: 1px 1px 2px black;
@@ -383,9 +395,6 @@ nav{
     margin: auto;
 }
 
-#weather{
-}
-
 .leaflet-tooltip-left p{
     margin: 3px;
 }
@@ -413,14 +422,13 @@ nav{
     transform: rotate(90deg);
 }
 
-.weatherDetail{
+#block_weatherDetail{
     width: 30%;
 }
 
 #arrayPrev{
     display: flex;
     flex-wrap: wrap;
-    
 }
 
 #arrayPrev td{
@@ -428,6 +436,33 @@ nav{
     border: 1px solid black;
     text-align: center;
 }
+
+#block_weatherDetail h4, #block_weatherDetail p{
+    margin :0;
+}
+
+/* Style registration form */
+
+.registrationForm ul li{
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.registrationForm h4{
+    background: linear-gradient(rgb(241, 198, 56), rgb(240,145,0));
+    border-radius: 10px;;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    padding: 10px;
+}
+
+.labFormReg{
+    padding-right: 20px;
+    text-align: right;
+    float: left;
+    width: 200px;
+}
+
 
 
 
