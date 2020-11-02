@@ -448,7 +448,7 @@ nav{
     margin-bottom: 30px;
 }
 
-.registrationForm h4{
+.titleForm{
     background: linear-gradient(rgb(241, 198, 56), rgb(240,145,0));
     border-radius: 10px;;
     color: white;

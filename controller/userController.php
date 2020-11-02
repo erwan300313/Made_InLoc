@@ -7,16 +7,21 @@ Class UserController extends Controller{
 
     public function __construct(){
         $this->userManager = new UserManager();
-       
     }
    
     public function index(){
         $this->genererVue(array()); 
     }
 
-    public function viewUserRegistration(){
+    public function userRegistration(){
         $this->genererVue(array()); 
     }
+
+    public function userLogin(){
+        $this->genererVue(array()); 
+    }
+
+    
 
     function addUser(){
         $userCheck = $this->userManager->userCheck($_POST['pseudo']);
@@ -38,8 +43,19 @@ Class UserController extends Controller{
     }
 
     public function userArea(){
-        $user = $this->userManager->getUser($_GET['pseudo']);
-        $passWordVerify = password_verify($_GET['password'], $user['password']);
+        if(isset($_GET['pseudo']) AND isset($_GET['password'])){
+            $pseudo = $_GET['pseudo'];
+            $password = $_GET['password'];
+        }elseif(isset($_POST['pseudo']) AND isset($_POST['password'])){
+            $pseudo = $_POST['pseudo'];
+            $password = $_POST['password'];
+        }else{
+            throw new Exception('Il y as un probleme dans votre pseudo ou votre mot de passe.');
+        }
+
+        $user = $this->userManager->getUser($pseudo);
+        $passWordVerify = password_verify($password, $user['password']);
+
         if($user == false){
             throw new Exception('Il y as un probleme dans votre pseudo.');
         }else{
@@ -53,4 +69,9 @@ Class UserController extends Controller{
         }
     }
 
+    function logOut(){
+        $_SESSION = array();
+        session_destroy();
+        header('Location: index.php');
+    }
 }

@@ -28,12 +28,12 @@
                 <p>Bonjour <?=$_SESSION['pseudo']?></p>
                 <div class="membreButton">
                     <p><i class="fas fa-house-user"></i><a href="index.php?action=membreAreaLogin#ancre">Espace membre /</a></p>
-                    <p><i class="fas fa-sign-out-alt"></i><a href="index.php?action=logOut">Déconnexion</a></p> 
+                    <p><i class="fas fa-sign-out-alt"></i><a href="index.php?controller=user&amp;action=logOut">Déconnexion</a></p> 
                 </div>
                 <?php
                 }else{
                 ?>
-                <p><a href="index.php?action=log"><i class="far fa-user"></i> Se connecter</a> / <a href="index.php?controller=user&amp;action=viewUserRegistration"><i class="fas fa-sign-in-alt"></i> S'inscrire</a></p>
+                <p><a href="index.php?controller=user&amp;action=userLogin"><i class="far fa-user"></i> Se connecter</a> / <a href="index.php?controller=user&amp;action=userRegistration"><i class="fas fa-sign-in-alt"></i> S'inscrire</a></p>
                 <?php
                 }
                 ?>
