@@ -22,4 +22,15 @@ class UserManager extends Manager
         return $getUser->fetch(); 
     }
 
+    public function addImg($user_id, $picture, $content) {
+        $sql = 'INSERT INTO user_img(user_id, img, content) VALUES(?, ?, ?)';
+        $addUser = $this->executerRequete($sql, array($user_id, $picture, $content));
+    }
+
+    public function getImg($id) {
+        $sql = 'SELECT img, content FROM user_img WHERE user_id = ? ';
+        $getImg = $this->executerRequete($sql, array($id));
+        return $getImg; 
+    }
+
 }

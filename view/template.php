@@ -27,7 +27,7 @@
                 ?>
                 <p>Bonjour <?=$_SESSION['pseudo']?></p>
                 <div class="membreButton">
-                    <p><i class="fas fa-house-user"></i><a href="index.php?action=membreAreaLogin#ancre">Espace membre /</a></p>
+                    <p><i class="fas fa-house-user"></i><a href="index.php?controller=user&amp;action=userArea">Espace membre /</a></p>
                     <p><i class="fas fa-sign-out-alt"></i><a href="index.php?controller=user&amp;action=logOut">Déconnexion</a></p> 
                 </div>
                 <?php

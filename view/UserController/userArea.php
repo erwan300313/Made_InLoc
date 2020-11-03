@@ -30,8 +30,25 @@
                     <li>Date de naissance : <?=$user['birthday']?></li>
                 </ul>
             </aside>
-            
-            
-            
+            <aside>
+                <h4 class="titleForm">Présentation de tes engins?</h4>
+
+                <form method="POST" action="index.php?controller=user&amp;action=addPicture" enctype="multipart/form-data">
+                    <input type="file" name="monfichier" value="">
+                    <textarea id="content" name="content"rows="5" cols="33">Decrivez votre bolide</textarea>
+                    <input type= "submit" name="chargement" value="charger le fichier">
+                </form>
+            </aside>
+            <aside>
+            <h4 class="titleForm">Mes engins</h4>
+            <?php
+                while ($data = $user_img->fetch()){
+            ?>
+                <p><img src="../../public/img/user_img/<?=$data['img']?>" alt=""></p>
+                <p><?=$data['content']?></p>
+            <?php 
+            }
+            ?>
+            </aside>  
     </article>
 </section>
