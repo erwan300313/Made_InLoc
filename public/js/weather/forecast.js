@@ -18,7 +18,7 @@ class Forecast{
     getInfo(foreWeather){
 
         let weatherDetailBlock = document.getElementById('block_weatherDetail');
-        weatherDetailBlock.innerHTML = '<h4> Ville: ' + this.name + '</h4><br /><p>Météo à 8 jours</p> <br/><table class="weatherDetail"><tr id="arrayPrev"></tr></table>'; 
+        weatherDetailBlock.innerHTML = '<h4> Commune: ' + this.name + '</h4><br /><p>Météo à 8 jours</p> <br/><table class="weatherDetail"><tr id="arrayPrev"></tr></table>'; 
 
         let arrayWeather = document.getElementById('arrayPrev');
         arrayWeather.style.marginLeft = '40px';

@@ -463,6 +463,70 @@ nav{
     width: 200px;
 }
 
+/* Style choiseButton */
+
+.choiseButton{
+    margin-bottom: 10px;
+}
+
+/* Style userPresentation */
+.userPres{
+    display: flex;
+    justify-content: space-between;
+}
+
+.imgPres{
+    width: 60%;
+}
+
+.imgPres img{
+    width: 100%;
+}
+
+.contentPres{
+    width: 35%;
+}
+
+/* Style forum */
+
+.titleForum{
+    margin:0px;
+}
+.forum{
+    margin: 0px;
+    padding:0px;
+}
+
+.forum li{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    border-bottom: 1px solid rgb(215, 215, 215);
+    background: linear-gradient(rgb(254, 254, 254), rgb(229, 229, 229));
+}
+
+.forum li .titleSection{
+    padding: 20px;
+    margin: 0px;
+}
+ .titleSection i{
+     margin-right: 10px;
+     font-size: 1.6em;
+     color: rgb(241, 198, 56);
+     border: 3px solid rgb(240,145,0);
+     border-radius: 20px;
+ }
+.lastTopic, .dateCreation{
+    padding-right: 20px;
+}
+
+.lastTopic p{
+    margin: 0px;
+}
+
+
+
 
 
 

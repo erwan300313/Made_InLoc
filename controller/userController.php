@@ -95,9 +95,7 @@ Class UserController extends Controller{
         $this->userManager->addImg($_SESSION['id'], $_FILES['monfichier']['name'], $_POST['content']);
         header('Location: index.php?controller=user&action=userArea');
     }
-
-
-
+    
     function logOut(){
         $_SESSION = array();
         session_destroy();

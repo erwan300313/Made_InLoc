@@ -16,26 +16,26 @@
             <aside>
                 <h4 class="titleForm">Information du compte</h4>
                 <ul>
-                    <li>Nom : <?=$user['last_name']?></li>
-                    <li>Prénom : <?=$user['first_name']?></li>
-                    <li>Pseudo : <?=$user['pseudo']?></li>
-                    <li>Mail : <?=$user['mail']?></li>
+                    <li>Nom : <?=htmlspecialchars($user['last_name'])?></li>
+                    <li>Prénom : <?=htmlspecialchars($user['first_name'])?></li>
+                    <li>Pseudo : <?=htmlspecialchars($user['pseudo'])?></li>
+                    <li>Mail : <?=htmlspecialchars($user['mail'])?></li>
                     <li>Type de membre : <?=$user['team']?></li>
                 </ul>
             </aside>
             <aside>
                 <h4 class="titleForm">Information additionnelles</h4>
                 <ul>
-                    <li>Votre ville : <?=$user['city']?></li>
-                    <li>Date de naissance : <?=$user['birthday']?></li>
+                    <li>Votre ville : <?=htmlspecialchars($user['city'])?></li>
+                    <li>Date de naissance : <?=htmlspecialchars($user['birthday'])?></li>
                 </ul>
             </aside>
             <aside>
                 <h4 class="titleForm">Présentation de tes engins?</h4>
 
-                <form method="POST" action="index.php?controller=user&amp;action=addPicture" enctype="multipart/form-data">
-                    <input type="file" name="monfichier" value="">
-                    <textarea id="content" name="content"rows="5" cols="33">Decrivez votre bolide</textarea>
+                <form method="POST" action="index.php?controller=user&amp;action=addPicture" enctype="multipart/form-data" class="formPres">
+                    <input type="file" name="monfichier" value="" class="choiseButton"><br />
+                    <textarea id="content" name="content"rows="5" cols="33" placeholder="Décrivez votre bolide en détail ..."></textarea><br />
                     <input type= "submit" name="chargement" value="charger le fichier">
                 </form>
             </aside>
@@ -44,8 +44,10 @@
             <?php
                 while ($data = $user_img->fetch()){
             ?>
-                <p><img src="../../public/img/user_img/<?=$data['img']?>" alt=""></p>
-                <p><?=$data['content']?></p>
+                <div class="userPres">
+                    <p class="imgPres"><img src="../../public/img/user_img/<?=htmlspecialchars($data['img'])?>" alt="<?=htmlspecialchars($data['img'])?>"></p>
+                    <p class="contentPres"><?=htmlspecialchars($data['content'])?></p>
+                </div>
             <?php 
             }
             ?>

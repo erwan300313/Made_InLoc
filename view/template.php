@@ -12,6 +12,14 @@
        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
        crossorigin=""></script>
+       <script src="https://cdn.tiny.cloud/1/qv7aonmkdnd5f4ghrx4sugtxakuuiam2zc5ho2e03n55ttk0/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+       <script>
+            tinymce.init({
+            selector: 'textarea',
+            plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+            toolbar_mode: 'floating',
+            });
+        </script>
         <meta name="viewport" content="width=device-width" />
     </head>
         
@@ -43,7 +51,7 @@
                     <li class="buttonMenu home"><a href="index.php">Accueil</a></li>
                     <li class="buttonMenu about"><a href="index.php?controller=about&amp;action=aboutIndex&amp;test=bonjour">A propos</a></li>
                     <li class="buttonMenu gallery"><a href="index.php?controller=about&amp;action=aboutMeteo">Météo</a></li>
-                    <li class="buttonMenu forum"><a href="index.php?controller=forum&amp;<!-- action=forumIndex -->">Forum</a></li>
+                    <li class="buttonMenu forum"><a href="index.php?controller=forum&amp;action=forumIndex">Forum</a></li>
                     <li class="buttonMenu contact"><a href="index.php?action=contact#ancre">Contact</a></li>
                 </ul>
             </nav>
