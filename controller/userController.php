@@ -60,6 +60,7 @@ Class UserController extends Controller{
             if($passWordVerify){
                 $_SESSION['pseudo'] = $user['pseudo'];
                 $_SESSION['team'] = $user['team'];
+                $_SESSION['date_inscription'] = $user['date_inscription'];
                 $_SESSION['id'] = $user['id'];
                 header('Location: index.php?controller=user&action=userArea'); 
             }else{

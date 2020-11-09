@@ -496,18 +496,20 @@ nav{
     margin: 0px;
     padding:0px;
 }
-
 .forum li{
     list-style: none;
     display: flex;
     justify-content: space-between;
+}
+
+.forum li{
     border-radius: 10px;
     border-bottom: 1px solid rgb(215, 215, 215);
     background: linear-gradient(rgb(254, 254, 254), rgb(229, 229, 229));
 }
 
 .forum li .titleSection{
-    padding: 20px;
+    padding: 15px;
     margin: 0px;
 }
  .titleSection i{
@@ -524,6 +526,28 @@ nav{
 .lastTopic p{
     margin: 0px;
 }
+
+.comments_content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.util_info{
+    width: 20%;
+}
+
+.forumCommentContent{
+    width: 80%;
+}
+
+.titleNewPost{
+    width: 50%;
+    margin-bottom: 10px;
+}
+}
+
+
+
 
 
 

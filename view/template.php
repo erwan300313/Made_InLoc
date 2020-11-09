@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <title><?= $title ?></title>
-        <link href="../public/style/style.css" rel="stylesheet" /> 
+        <link href="public/style/style.css" rel="stylesheet" /> 
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/fc001796a0.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
