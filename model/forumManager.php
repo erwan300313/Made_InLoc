@@ -20,13 +20,45 @@ class ForumManager extends Manager
     }
 
     public function getComments($topic_id){
-        $sql = 'SELECT *, DATE_FORMAT(author_inscription, \'%d/%m/%Y\') AS author_inscription, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_creation FROM comments WHERE topic_id = ?';
+        $sql = 'SELECT *, author_inscription, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_creation FROM comments WHERE topic_id = ?';
         $getComments = $this->executerRequete($sql, array($topic_id));
         return $getComments;
     }
 
+    public function getComment($comment_id){
+        $sql = 'SELECT * FROM comments WHERE id = ?';
+        $getComment = $this->executerRequete($sql, array($comment_id));
+        return $getComment->fetch();
+    }
+
     public function addTopic($author, $author_inscirption, $author_team, $category_id, $title, $content) {
         $sql = 'INSERT INTO topic(author, author_inscription, author_team, category_id, title, content, date_creation) VALUES(?, ?, ?, ?, ?, ?,NOW())';
-        $addUser = $this->executerRequete($sql, array($author, $author_inscirption, $author_team, $category_id, $title, $content));
+        $addTopic = $this->executerRequete($sql, array($author, $author_inscirption, $author_team, $category_id, $title, $content));
     }
+
+    public function addComment($topic_id, $author, $author_team, $author_inscription, $content) {
+        $sql = 'INSERT INTO comments(topic_id, author, author_team, author_inscription, content, date_creation) VALUES(?, ?, ?, ?, ?,NOW())';
+        $addComment = $this->executerRequete($sql, array($topic_id, $author, $author_team, $author_inscription, $content));
+    }
+
+    public function reportComment($comment_id, $newReport) {
+        $sql = 'UPDATE comments SET report = ? WHERE id = ?';
+        $reportComment = $this->executerRequete($sql, array($newReport, $comment_id));
+    }
+
+    public function updateComment($comment_id, $content) {
+        $sql = 'UPDATE comments SET content = ? WHERE id = ?';
+        $updateComment = $this->executerRequete($sql, array($content, $comment_id));
+    }
+
+    public function deleteComment($comment_id) {
+        $sql = 'DELETE from comments  WHERE id = ?';
+        $deleteComment = $this->executerRequete($sql, array($comment_id));
+    }
+
+
+
+
+
+
 }
