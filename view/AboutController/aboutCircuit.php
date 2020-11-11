@@ -1,7 +1,7 @@
 <?php $this->title = "Circuit"; ?>
 
 
-<img src="../../public/img/banner/index_banner.png" alt="banner_background" class="banner_img">
+<img src="public/img/banner/index_banner.png" alt="banner_background" class="banner_img">
 
 <section class="banner">
     <h3>Circuit découverte</h3>
@@ -17,7 +17,7 @@
         ?>
             <article id="circuit">
                 <div class="circuit">
-                    <img src="../../public/img/circuit/<?=htmlspecialchars($data['map'])?>.png" alt="<?=htmlspecialchars($data['map'])?>">
+                    <img src="public/img/circuit/<?=htmlspecialchars($data['map'])?>.png" alt="<?=htmlspecialchars($data['map'])?>">
                     <div class="detail_circuit">
                         <h3><?=$data['title']?></h3>
                         <p><?=$data['content']?></p>
@@ -29,9 +29,9 @@
                     </div>
                 </div>
             <p>Point de vue de cette balade</p>
-            <img src="../../public/img/viewpoint/<?=htmlspecialchars($data['picture1'])?>.jpg" alt="<?=htmlspecialchars($data['picture1'])?>">
-            <img src="../../public/img/viewpoint/<?=htmlspecialchars($data['picture2'])?>.jpg" alt="<?=htmlspecialchars($data['picture2'])?>">
-            <img src="../../public/img/viewpoint/<?=htmlspecialchars($data['picture3'])?>.jpg" alt="<?=htmlspecialchars($data['picture3'])?>">
+            <img src="public/img/viewpoint/<?=htmlspecialchars($data['picture1'])?>.jpg" alt="<?=htmlspecialchars($data['picture1'])?>">
+            <img src="public/img/viewpoint/<?=htmlspecialchars($data['picture2'])?>.jpg" alt="<?=htmlspecialchars($data['picture2'])?>">
+            <img src="public/img/viewpoint/<?=htmlspecialchars($data['picture3'])?>.jpg" alt="<?=htmlspecialchars($data['picture3'])?>">
             </article>
         <?php 
         }

@@ -78,6 +78,6 @@
             </div>
         </footer>
         <?=$script?>
-        <script src="../public/js/header/headerAnim.js"></script>
+        <script src="public/js/header/headerAnim.js"></script>
     </body>
 </html>

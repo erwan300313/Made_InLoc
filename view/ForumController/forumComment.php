@@ -1,7 +1,8 @@
-<?php $this->title = "Nos ballades"; ?>
+<?php $this->title = $topic['title']; ?>
+<?php $this->script ='<script src="public/js/forum/forum.js"></script>';?>
 
 
-<img src="../../public/img/banner/index_banner.png" alt="banner_background" class="banner_img">
+<img src="public/img/banner/index_banner.png" alt="banner_background" class="banner_img">
 
 <section class="banner">
     <h3>Nos ballades</h3>
@@ -16,7 +17,7 @@
         <?php
         if(isset($_SESSION['pseudo'])){
         ?>
-            <p><a href="" id="newTopic">Ajouter un nouveau commentaire</a></p>
+            <p id="newTopic"><a href="">Ajouter un nouveau commentaire</a></p>
             <form method="POST" action="index.php?controller=forum&amp;action=addComment&amp;topic_id=<?=$topic['id']?>&amp;author=<?=$_SESSION['pseudo']?>&amp;author_team=<?=$_SESSION['team']?>&amp;author_inscription=<?=$_SESSION['date_inscription']?>" enctype="multipart/form-data" id="formTopic">
                 <textarea id="content" name="content"rows="5" cols="33" placeholder="Rédiger votre commentaire ici"></textarea><br />
                 <input type= "submit" name="chargement" value="Envoyer le commentaire">
@@ -57,7 +58,7 @@
                                 <a href="index.php?controller=forum&amp;action=reportComment&amp;comment_id=<?=$data['id']?>&amp;topic_id=<?=$topic['id']?>">Signaler</a>
                                 <?php
                                 }
-                                if($_SESSION['pseudo'] == $data['author']){
+                                if(isset($_SESSION['pseudo']) AND $_SESSION['pseudo'] == $data['author']){
                                 ?>
                                 <a href="index.php?controller=forum&amp;action=editComment&amp;topic_id=<?=$topic['id']?>&amp;comment_id=<?=$data['id']?>">Modifier</a>
                                 <a href="index.php?controller=forum&amp;action=viewDeleteComment&amp;topic_id=<?=$topic['id']?>&amp;comment_id=<?=$data['id']?>">Supprimer</a>

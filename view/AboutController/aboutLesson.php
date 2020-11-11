@@ -1,7 +1,7 @@
 <?php $this->title = "Leçon de conduite"; ?>
 
 
-<img src="../../public/img/banner/index_banner.png" alt="banner_background" class="banner_img">
+<img src="public/img/banner/index_banner.png" alt="banner_background" class="banner_img">
 
 <section class="banner">
     <h3>Leçon de conduite</h3>
@@ -15,7 +15,7 @@
     <article>
         <p class="title_pres">Vous n'avez jamais roullez en moto ?<br /> Vous souhaitez apprendre dans un cadre fermé et encadré ? <br/>Cliquer sur le bouton en savoir plus et on s'occupe de tout.</p>
         <aside id="lesson">
-            <img src="../../public/img/diver/aboutLesson.jpg">
+            <img src="public/img/diver/aboutLesson.jpg">
             <div class="detail_lesson">
                 <h3>Des sessions par tranche d'une heure.</h3>
                 <p>Venez découvrait l'univers de la moto. Dans l'enceinte de notre parc privé, vous serrez encadrer par notre équipe de passionnées qui sauront vous guider au mieux dans c'est l'apprentissage.</p>

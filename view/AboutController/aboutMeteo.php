@@ -1,11 +1,11 @@
 <?php $this->title = "Météo"; ?>
-<?php $this->script ='  <script src="../public/js/weather/forecast.js"></script>
-                        <script src="../public/js/weather/weather.js"></script>
-                        <script src="../public/js/weather/map.js"></script>
-                        <script src="../public/js/weather/mainWeather.js"></script>'; 
+<?php $this->script ='  <script src="public/js/weather/forecast.js"></script>
+                        <script src="public/js/weather/weather.js"></script>
+                        <script src="public/js/weather/map.js"></script>
+                        <script src="public/js/weather/mainWeather.js"></script>'; 
 ?>
 
-<img src="../../public/img/banner/index_banner.png" alt="banner_background" class="banner_img">
+<img src="public/img/banner/index_banner.png" alt="banner_background" class="banner_img">
 
 <section class="banner">
     <h3>Météo</h3>

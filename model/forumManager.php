@@ -5,7 +5,16 @@ require_once("model/manager.php");
 
 class ForumManager extends Manager
 {
+    public function getIndexTitles(){
+        $sql = 'SELECT * FROM forumIndex';
+        $getTitle = $this->executerRequete($sql, array());
+        return $getTitle;
+    }
 
+    public function updateTitlesIndex($title, $category_id) {
+        $sql = 'UPDATE forumIndex SET lastTopic = ? WHERE topic_category_id = ?';
+        $updateTitlesIndex = $this->executerRequete($sql, array($title, $category_id));
+    } 
 
     public function getTopics($category_id){
         $sql = 'SELECT *, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_creation  FROM topic WHERE category_id = ? ORDER BY id DESC';

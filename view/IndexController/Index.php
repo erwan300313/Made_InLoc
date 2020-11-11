@@ -1,8 +1,8 @@
 <?php $this->title = "Accueil"; ?>
-<?php $this->script ='<script src="../public/js/slider/slider.js"></script><script src="../public/js/slider/mainSlider.js"></script>'; ?>
+<?php $this->script ='<script src="public/js/slider/slider.js"></script><script src="../public/js/slider/mainSlider.js"></script>'; ?>
 
 
-<img src="../../public/img/banner/index_banner.png" alt="banner_background" class="banner_img">
+<img src="public/img/banner/index_banner.png" alt="banner_background" class="banner_img">
 
 <section class="banner">
     <h3>Made InLoc</h3>
@@ -51,13 +51,13 @@
     <article id="weather">
         <h2>Consultez la meteo</h2>
         <aside class="weather">
-            <img src="../../public/img/map/map.png" alt="">    
+            <img src="public/img/map/map.png" alt="">    
             <p>Pour que votre experience soit parfaite nous vous conseillons de consulter les prévisions météo avant de nous contacter.<br /><br /> Deux saisons découpent l’année en martinique : une saison sèche de décembre à avril, où le temps est ensoleillé, ponctué de quelques pluies d’orage, et où les températures avoisinent 27°C, et une saison humide entre juin et novembre, avec une atmosphère plus lourde, des températures aux environs de 30°C et des précipitations fréquentes.</p>
         </aside>   
     </article>
     <article class="slider_moto">
         <h2>Tous nos bolides</h2>
-        <div id="slider_moto"><img src="../../public/img/moto/" alt=""></div>
+        <div id="slider_moto"><img src="public/img/moto/" alt=""></div>
     </article>
     
 </section>

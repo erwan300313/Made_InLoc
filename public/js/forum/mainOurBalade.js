@@ -1,1 +1,0 @@
-let newbalade = new Balade();

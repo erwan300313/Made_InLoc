@@ -1,7 +1,7 @@
 <?php $this->title = "Inscription"; ?>
 
 
-<img src="../../public/img/banner/index_banner.png" alt="banner_background" class="banner_img">
+<img src="public/img/banner/index_banner.png" alt="banner_background" class="banner_img">
 
 <section class="banner">
     <h3>Inscription</h3>

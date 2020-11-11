@@ -1,9 +1,11 @@
-<?php $this->title = "Nos ballades"; ?>
+<?php $this->title = $_GET['title']; ?>
+<?php $this->script ='<script src="public/js/forum/forum.js"></script>'?>
 
-<img src="../../public/img/banner/index_banner.png" alt="banner_background" class="banner_img">
+<img src="public/img/banner/index_banner.png" alt="banner_background" class="banner_img">
 
 <section class="banner">
-    <h3><?=$_GET['title']?></h3>
+    <h3><?= $_GET['title'];?>
+    </h3>
     <p>Vos retours d'expérience</p>
     <a href=""> En savoir plus ...</a>
 </section>
@@ -15,8 +17,8 @@
             <?php
             if(isset($_SESSION['pseudo'])){
             ?>
-                <p><a href="" id="newTopic">Ajouter un nouveau post</a></p>
-                <form method="POST" action="index.php?controller=forum&amp;action=addTopic&amp;author=<?=$_SESSION['pseudo']?>&amp;date_inscription=<?=$_SESSION['date_inscription']?>&amp;author_team=<?=$_SESSION['team']?>&amp;category_id=<?=$_GET['category_id']?>" enctype="multipart/form-data" id="formTopic">
+                <p id="newTopic"><a href="" id="newTopic">Ajouter un nouveau post</a></p>
+                <form method="POST" action="index.php?controller=forum&amp;action=addTopic&amp;author=<?=$_SESSION['pseudo']?>&amp;date_inscription=<?=$_SESSION['date_inscription']?>&amp;author_team=<?=$_SESSION['team']?>&amp;category_id=<?=$_GET['category_id']?>&amp;title=<?=$_GET['title']?>" enctype="multipart/form-data" id="formTopic">
                     <label for="title">Titre</label>
                     <input type="text" id="title" name="title" class="titleNewPost"/><br />
                     <textarea id="content" name="content"rows="5" cols="33" placeholder="Rédiger votre nouveau post ici"></textarea><br />

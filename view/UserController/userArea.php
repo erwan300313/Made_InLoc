@@ -1,7 +1,7 @@
 <?php $this->title = "Espace membre"; ?>
 
 
-<img src="../../public/img/banner/index_banner.png" alt="banner_background" class="banner_img">
+<img src="public/img/banner/index_banner.png" alt="banner_background" class="banner_img">
 
 <section class="banner">
     <h3>Espace membre</h3>
@@ -45,7 +45,7 @@
                 while ($data = $user_img->fetch()){
             ?>
                 <div class="userPres">
-                    <p class="imgPres"><img src="../../public/img/user_img/<?=htmlspecialchars($data['img'])?>" alt="<?=htmlspecialchars($data['img'])?>"></p>
+                    <p class="imgPres"><img src="public/img/user_img/<?=htmlspecialchars($data['img'])?>" alt="<?=htmlspecialchars($data['img'])?>"></p>
                     <p class="contentPres"><?=htmlspecialchars($data['content'])?></p>
                 </div>
             <?php 

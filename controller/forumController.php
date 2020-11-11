@@ -16,17 +16,14 @@ Class ForumController extends Controller{
     }
 
     public function forumIndex(){
-        $this->genererVue(array()); 
+        $titles = $this->forumManager->getIndexTitles();
+        $this->genererVue(array('titles' => $titles)); 
     }
 
-    public function forumTopic(){  /* Voir pour gérer exeption en verfiaint retour de BDD */
+    public function forumTopic(){
         $topics = $this->forumManager->getTopics($_GET['category_id']);
-        $data = $topics -> fetch();
-        if(!$data){
-            throw new Exception('Probleme lors du chargement du forum ');
-        }else{
-            $this->genererVue(array('topics' => $topics));
-        }
+        $this->genererVue(array('topics' => $topics));
+        
     }
 
     public function forumComment(){
@@ -46,7 +43,8 @@ Class ForumController extends Controller{
             throw new Exception('Un des champs du formulaire d\'ajout de sujet est vide.');
         }else{
             $this->forumManager->addTopic($_GET['author'], $_GET['date_inscription'], $_GET['author_team'], $_GET['category_id'], $_POST['title'], $_POST['content']);
-            header('Location: index.php?controller=forum&action=forumTopic&category_id='. $_GET['category_id']);
+            $this->forumManager->updateTitlesIndex($_POST['title'], $_GET['category_id']);
+            header('Location: index.php?controller=forum&action=forumTopic&category_id='. $_GET['category_id'] . '&title=' . $_GET['title']);
         }
     }
 

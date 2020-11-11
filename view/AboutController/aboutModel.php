@@ -1,7 +1,7 @@
 <?php $this->title = "Essai"; ?>
 
 
-<img src="../../public/img/banner/index_banner.png" alt="banner_background" class="banner_img">
+<img src="public/img/banner/index_banner.png" alt="banner_background" class="banner_img">
 
 <section class="banner">
     <h3>Technique</h3>
@@ -28,8 +28,8 @@
                         <a href="">Nous contacter</a>
                     </div>
                     <div class="picture_moto">
-                        <img src="../../public/img/moto/<?=htmlspecialchars($data['picture1'])?>" alt="<?=htmlspecialchars($data['picture1'])?>">
-                        <img src="../../public/img/moto/<?=htmlspecialchars($data['picture2'])?>" alt="<?=htmlspecialchars($data['picture2'])?>">
+                        <img src="public/img/moto/<?=htmlspecialchars($data['picture1'])?>" alt="<?=htmlspecialchars($data['picture1'])?>">
+                        <img src="public/img/moto/<?=htmlspecialchars($data['picture2'])?>" alt="<?=htmlspecialchars($data['picture2'])?>">
                     </div>
                     </div>
                     

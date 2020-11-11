@@ -1,7 +1,7 @@
 <?php $this->title = "Entretien"; ?>
 
 
-<img src="../../public/img/banner/index_banner.png" alt="banner_background" class="banner_img">
+<img src="public/img/banner/index_banner.png" alt="banner_background" class="banner_img">
 
 <section class="banner">
     <h3>Entretient</h3>
@@ -23,7 +23,7 @@
                 </p>
                 <a href="">Nous contacter</a>
             </div>
-            <img src="../../public/img/diver/atelier.jpg">
+            <img src="public/img/diver/atelier.jpg">
         </aside>
     </article>
 </section>
