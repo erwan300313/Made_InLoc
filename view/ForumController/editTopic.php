@@ -1,4 +1,4 @@
-<?php $this->title = "Supprimer votre commentaire"; ?>
+<?php $this->title = "Editer votre Post"; ?>
 
 
 <img src="public/img/banner/index_banner.png" alt="banner_background" class="banner_img">
@@ -33,26 +33,11 @@
         </aside>
 
         <aside>
-            <h4 class="titleForm titleForum">
-                <div>Réponse du <?=htmlspecialchars($comment['date_creation'])?></div>
-            </h4>
-            <div class="comments_content">
-                <p class="util_info">
-                    Par : <?=htmlspecialchars($comment['author'])?><br/>
-                    Inscrit(e): <?=htmlspecialchars($comment['author_inscription'])?><br/>
-                    Groupe : 
-                        <?php 
-                        if($comment['author_team'] == 2){
-                    ?>
-                    Utilisateur
-                    <?php
-                    }
-                    ?>
-                </p>
-                <div class="forumCommentContent">
-                   <p><?=nl2br(html_entity_decode($comment['content']))?></p>
-                   <p class="deleteButton"><a href="index.php?controller=forum&amp;action=deleteComment&amp;comment_id=<?=$comment['id']?>&amp;topic_id=<?=$topic['id']?>&amp;title=<?=$_GET['title']?>">Supprimer ce commentaire définitivement</a></p>
-                </div>
+            <div class="forumCommentContent">
+                <form method="POST" action="index.php?controller=forum&amp;action=updateTopic&amp;topic_id=<?=$topic['id']?>&amp;category_id=<?=$topic['category_id']?>&amp;title=<?=$_GET['title'];?>" enctype="multipart/form-data" id="editCommentArea">
+                    <textarea id="content" name="content"rows="5" cols="33"><?=nl2br(html_entity_decode($topic['content']))?></textarea><br />
+                    <input type= "submit" name="chargement" value="Envoyer la modification de votre post">
+                </form>
             </div>
         </aside>
     </article>

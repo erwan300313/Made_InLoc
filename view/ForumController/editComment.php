@@ -4,7 +4,7 @@
 <img src="public/img/banner/index_banner.png" alt="banner_background" class="banner_img">
 
 <section class="banner">
-    <h3>Nos ballades</h3>
+    <h3><?=htmlspecialchars($_GET['title'])?></h3>
     <p>Vos retour sur l'expérience</p>
     <a href=""> En savoir plus ...</a>
 </section>
@@ -50,7 +50,7 @@
                     ?>
                 </p>
                 <div class="forumCommentContent">
-                    <form method="POST" action="index.php?controller=forum&amp;action=updateComment&amp;comment_id=<?=$comment['id']?>&amp;topic_id=<?=$topic['id']?>" enctype="multipart/form-data" id="editCommentArea">
+                    <form method="POST" action="index.php?controller=forum&amp;action=updateComment&amp;comment_id=<?=$comment['id']?>&amp;topic_id=<?=$topic['id']?>&amp;title=<?=$_GET['title']?>" enctype="multipart/form-data" id="editCommentArea">
                         <textarea id="content" name="content"rows="5" cols="33"><?=$comment['content']?></textarea><br />
                         <input type= "submit" name="chargement" value="Envoyer le commentaire modifier">
                     </form>

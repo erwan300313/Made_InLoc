@@ -17,23 +17,49 @@ Class ForumController extends Controller{
 
     public function forumIndex(){
         $titles = $this->forumManager->getIndexTitles();
-        $this->genererVue(array('titles' => $titles)); 
+        $datas = $titles->fetchAll();
+        $this->genererVue(array('datas' => $datas)); 
     }
 
-    public function forumTopic(){
-        $topics = $this->forumManager->getTopics($_GET['category_id']);
-        $this->genererVue(array('topics' => $topics));
-        
+    public function forumTopic(){ /* Voir pour fetchAll pour verifier retour de BDD */
+        $datas = $this->forumManager->getTopics($_GET['category_id']);
+        $topics = $datas->fetchAll();
+        if(!$topics){
+            throw new Exception('Aucun topic n\'est disponible.');
+        }else{
+            $this->genererVue(array('topics' => $topics));
+        }
+    }
+
+    public function editTopic(){
+        $topic = $this->forumManager->getTopic($_GET['topic_id']);
+        $this->genererVue(array('topic' => $topic, 'title' => $_GET['title']));
+    }
+    
+    
+    public function updateTopic(){
+        $this->forumManager->updateTopic($_GET['topic_id'], $_POST['content']);
+        header('Location: index.php?controller=forum&action=forumTopic&category_id='. $_GET['category_id'] . '&title=' . $_GET['title']);
+    }
+
+    public function viewDeleteTopic(){
+        $topic = $this->forumManager->getTopic($_GET['topic_id']);
+        $this->genererVue(array('topic' => $topic, 'title' => $_GET['title']));
+    }
+
+    public function deleteTopic(){
+        $this->forumManager->deleteTopic($_GET['topic_id']);
+        header('Location: index.php?controller=forum&action=forumTopic&category_id='. $_GET['category_id'] . '&title=' . $_GET['title']);
     }
 
     public function forumComment(){
         $topic = $this->forumManager->getTopic($_GET['topic_id']);
-
+        
         if(!$topic){
             throw new Exception('Ce topic n\'est pas disponible.');
         }else{
             $comments = $this->forumManager->getComments($_GET['topic_id']);
-            $this->genererVue(array('topic' => $topic, 'comments' => $comments)); 
+            $this->genererVue(array('topic' => $topic, 'comments' => $comments, 'title' => $_GET['title'])); 
         }
         
     }
@@ -53,7 +79,7 @@ Class ForumController extends Controller{
             throw new Exception('Un des champs du formulaire d\'ajout de commentaire est vide.');
         }else{
             $this->forumManager->addComment($_GET['topic_id'], $_GET['author'], $_GET['author_team'], $_GET['author_inscription'], $_POST['content']);
-            header('Location: index.php?controller=forum&action=forumComment&topic_id='. $_GET['topic_id']);
+            header('Location: index.php?controller=forum&action=forumComment&topic_id='. $_GET['topic_id'] . '&title=' . $_GET['title']);
         }
     }
 
@@ -67,12 +93,12 @@ Class ForumController extends Controller{
     public function editComment(){
         $topic = $this->forumManager->getTopic($_GET['topic_id']);
         $comment = $this->forumManager->getComment($_GET['comment_id']);
-        $this->genererVue(array('topic' => $topic, 'comment' => $comment));
+        $this->genererVue(array('topic' => $topic, 'comment' => $comment, 'title' => $_GET['title']));
     }
 
     public function updateComment(){
         $this->forumManager->updateComment($_GET['comment_id'], $_POST['content']);
-        header('Location: index.php?controller=forum&action=forumComment&topic_id='. $_GET['topic_id']);
+        header('Location: index.php?controller=forum&action=forumComment&topic_id='. $_GET['topic_id'] . '&title=' . $_GET['title']);
     }
 
     public function viewDeleteComment(){
@@ -83,6 +109,6 @@ Class ForumController extends Controller{
 
     public function deleteComment(){
         $this->forumManager->deleteComment($_GET['comment_id']);
-        header('Location: index.php?controller=forum&action=forumComment&topic_id='. $_GET['topic_id']);
+        header('Location: index.php?controller=forum&action=forumComment&topic_id='. $_GET['topic_id'] . '&title=' . $_GET['title']);
     }
 }

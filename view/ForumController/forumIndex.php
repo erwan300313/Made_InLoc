@@ -13,7 +13,6 @@
 
 <section class="content_body">  
     <article>  
-        <?php $datas = $titles->fetchAll();?>
         <aside>
             <h4 class="titleForm titleForum">Forum Balade</h4>
             <ul class="balade forum">
@@ -26,7 +25,7 @@
                         <li>
                             <p class="titleSection"><i class="fas fa-chevron-circle-right"></i><a href="index.php?controller=forum&amp;action=forumTopic&amp;category_id=<?=$category_id?>&amp;title=<?=$data['title']?>"><?=$data['title']?></a></p>
                             <div class="lastTopic">
-                                <p><u>Dernier message :</u> <?=$data['lastTopic']?></p>
+                                <p><u>Dernier message :</u> <?=htmlspecialchars($data['lastTopic'])?></p>
                             </div>
                         </li>
                         <?php
@@ -48,7 +47,7 @@
                             <li>
                                 <p class="titleSection"><i class="fas fa-chevron-circle-right"></i><a href="index.php?controller=forum&amp;action=forumTopic&amp;category_id=<?=$category_id?>&amp;title=<?=$data['title']?>"><?=$data['title']?></a></p>
                                 <div class="lastTopic">
-                                    <p><u>Dernier message :</u> <?=$data['lastTopic']?></p>
+                                    <p><u>Dernier message :</u> <?=htmlspecialchars($data['lastTopic'])?></p>
                                 </div>
                             </li>
                             <?php
@@ -70,7 +69,7 @@
                             <li>
                                 <p class="titleSection"><i class="fas fa-chevron-circle-right"></i><a href="index.php?controller=forum&amp;action=forumTopic&amp;category_id=<?=$category_id?>&amp;title=<?=$data['title']?>"><?=$data['title']?></a></p>
                                 <div class="lastTopic">
-                                    <p><u>Dernier message :</u> <?=$data['lastTopic']?></p>
+                                    <p><u>Dernier message :</u> <?=htmlspecialchars($data['lastTopic'])?></p>
                                 </div>
                             </li>
                             <?php

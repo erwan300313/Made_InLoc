@@ -33,25 +33,8 @@
         </aside>
 
         <aside>
-            <h4 class="titleForm titleForum">
-                <div>Réponse du <?=htmlspecialchars($comment['date_creation'])?></div>
-            </h4>
-            <div class="comments_content">
-                <p class="util_info">
-                    Par : <?=htmlspecialchars($comment['author'])?><br/>
-                    Inscrit(e): <?=htmlspecialchars($comment['author_inscription'])?><br/>
-                    Groupe : 
-                        <?php 
-                        if($comment['author_team'] == 2){
-                    ?>
-                    Utilisateur
-                    <?php
-                    }
-                    ?>
-                </p>
                 <div class="forumCommentContent">
-                   <p><?=nl2br(html_entity_decode($comment['content']))?></p>
-                   <p class="deleteButton"><a href="index.php?controller=forum&amp;action=deleteComment&amp;comment_id=<?=$comment['id']?>&amp;topic_id=<?=$topic['id']?>&amp;title=<?=$_GET['title']?>">Supprimer ce commentaire définitivement</a></p>
+                   <p class="deleteButton"><a href="index.php?controller=forum&amp;action=deleteTopic&amp;topic_id=<?=$topic['id']?>&amp;category_id=<?=$topic['category_id']?>&amp;title=<?=$_GET['title']?>">Supprimer ce Post définitivement</a></p>
                 </div>
             </div>
         </aside>

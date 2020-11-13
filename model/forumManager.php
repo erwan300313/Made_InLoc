@@ -28,6 +28,16 @@ class ForumManager extends Manager
         return $getTopic->fetch();;
     }
 
+    public function updateTopic($topic_id, $content) {
+        $sql = 'UPDATE topic SET content = ? WHERE id = ?';
+        $updateTopic = $this->executerRequete($sql, array($content, $topic_id));
+    }
+
+    public function deleteTopic($topic_id) {
+        $sql = 'DELETE from topic  WHERE id = ?';
+        $deleteTopic = $this->executerRequete($sql, array($topic_id));
+    }
+
     public function getComments($topic_id){
         $sql = 'SELECT *, author_inscription, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_creation FROM comments WHERE topic_id = ?';
         $getComments = $this->executerRequete($sql, array($topic_id));

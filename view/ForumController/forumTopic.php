@@ -4,8 +4,7 @@
 <img src="public/img/banner/index_banner.png" alt="banner_background" class="banner_img">
 
 <section class="banner">
-    <h3><?= $_GET['title'];?>
-    </h3>
+    <h3><?= $_GET['title'];?></h3>
     <p>Vos retours d'expérience</p>
     <a href=""> En savoir plus ...</a>
 </section>
@@ -28,14 +27,27 @@
             }
             ?>
             <aside>
-                <h4 class="titleForm titleForum"><?=$_GET['title']?></h4>
+                <h4 class="titleForm titleForum"><?=htmlspecialchars($_GET['title'])?></h4>
                 <ul class="balade forum">
                 <?php
-                while ($data = $topics->fetch()){
+                foreach ($topics as $keys => $topic){
                 ?>
                     <li>
-                        <p class="titleSection"><a href="index.php?controller=forum&amp;action=forumComment&amp;topic_id=<?=$data['id']?>"><i class="fas fa-chevron-circle-right"></i><?=$data['title']?></a></p>
-                        <p class="dateCreation">Posté le <?=$data['date_creation']?> par <?=$data['author']?></p>  
+                        <p class="titleSection"><a href="index.php?controller=forum&amp;action=forumComment&amp;topic_id=<?=$topic['id']?>&amp;title=<?=$_GET['title']?>"><i class="fas fa-chevron-circle-right"></i><?=htmlspecialchars($topic['title'])?></a></p>
+                        <div class="dateCreation">
+                            <p >Posté le <?=htmlspecialchars($topic['date_creation'])?> par <?=htmlspecialchars($topic['author'])?></p>
+                            <?php
+                            if(isset($_SESSION['pseudo']) AND $_SESSION['pseudo'] == $topic['author']){
+                            ?>
+                            <p class="titleButton">
+                                <a href="index.php?controller=forum&amp;action=editTopic&amp;topic_id=<?=$topic['id']?>&amp;title=<?=$_GET['title']?>">Modifier</a>
+                                <a href="index.php?controller=forum&amp;action=viewDeleteTopic&amp;topic_id=<?=$topic['id']?>&amp;title=<?=$_GET['title']?>">Supprimer</a>
+                            </p>
+                            <?php
+                            }
+                            ?>
+                        </div>
+                        
                     </li>
                 <?php 
                 }
