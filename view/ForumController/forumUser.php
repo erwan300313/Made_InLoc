@@ -1,4 +1,4 @@
-<?php $this->title = $topic['title']; ?>
+<?php $this->title = Présentation ?>
 <?php $this->script ='<script src="public/js/forum/forum.js"></script>';?>
 
 
@@ -6,7 +6,7 @@
 
 <section class="banner">
     <h3><?=htmlspecialchars($_GET['title'])?></h3>
-    <p>Vos retour d'expérience</p>
+    <p>Vos retour sur l'expérience</p>
     <a href=""> En savoir plus ...</a>
 </section>
 
@@ -40,16 +40,7 @@
                     }
                     ?>
                 </p>
-                <div class="forumCommentContent">
-                    <?=nl2br(html_entity_decode($topic['content']))?>
-                    <?php
-                    if(isset($topic['img'])){
-                    ?>
-                        <p><img src="public/img/user_img/<?=$topic['img']?>" alt="<?=$topic['img']?>"></p>
-                    <?php
-                    }
-                    ?>
-                </div>
+                <div class="forumCommentContent"><?=nl2br(html_entity_decode($topic['content']))?></div>
             </div>
         </aside>
             <?php

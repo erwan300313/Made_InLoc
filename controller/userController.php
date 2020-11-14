@@ -7,6 +7,7 @@ Class UserController extends Controller{
 
     public function __construct(){
         $this->userManager = new UserManager();
+        $this->forumManager = new ForumManager();
     }
    
     public function index(){
@@ -62,7 +63,7 @@ Class UserController extends Controller{
                 $_SESSION['team'] = $user['team'];
                 $_SESSION['date_inscription'] = $user['date_inscription'];
                 $_SESSION['id'] = $user['id'];
-                header('Location: index.php?controller=user&action=userArea'); 
+                header('Location: index.php?controller=user&action=userArea&category_id=' . $_GET['category_id']); 
             }else{
                 throw new Exception('Il y as un probleme dans votre mot de pass.');
             }
@@ -71,8 +72,8 @@ Class UserController extends Controller{
 
     public function userArea(){
         $user = $this->userManager->getUser($_SESSION['pseudo']);
-        $user_img = $this->userManager->getImg($_SESSION['id']);
-        $this->genererVue(array('user' => $user, 'user_img' => $user_img));
+        $img = $this->forumManager->getImg($_SESSION['pseudo'], $_GET['category_id']);
+        $this->genererVue(array('user' => $user, 'img' => $img));
     }
 
     public function addPicture(){
@@ -93,8 +94,8 @@ Class UserController extends Controller{
             throw new Exception('Il y un probleme avec l\'image que vous souahitez enregistrer.');
         }
 
-        $this->userManager->addImg($_SESSION['id'], $_FILES['monfichier']['name'], $_POST['content']);
-        header('Location: index.php?controller=user&action=userArea');
+        $this->forumManager->addimg($_SESSION['pseudo'], $_SESSION['date_inscription'], $_SESSION['team'], $_GET['category_id'], $_POST['title'], $_POST['content'], $_FILES['monfichier']['name']);
+        header('Location: index.php?controller=user&action=userArea&category_id=' . $_GET['category_id']);
     }
     
     function logOut(){

@@ -35,7 +35,9 @@
         <aside>
             <div class="forumCommentContent">
                 <form method="POST" action="index.php?controller=forum&amp;action=updateTopic&amp;topic_id=<?=$topic['id']?>&amp;category_id=<?=$topic['category_id']?>&amp;title=<?=$_GET['title'];?>" enctype="multipart/form-data" id="editCommentArea">
-                    <textarea id="content" name="content"rows="5" cols="33"><?=nl2br(html_entity_decode($topic['content']))?></textarea><br />
+                    <textarea id="content" name="content"rows="5" cols="33">
+                        <?=nl2br(html_entity_decode($topic['content']))?>                   
+                    </textarea><br />
                     <input type= "submit" name="chargement" value="Envoyer la modification de votre post">
                 </form>
             </div>

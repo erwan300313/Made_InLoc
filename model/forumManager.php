@@ -11,9 +11,15 @@ class ForumManager extends Manager
         return $getTitle;
     }
 
-    public function updateTitlesIndex($title, $category_id) {
+    public function addLastTopic($title, $category_id) {
         $sql = 'UPDATE forumIndex SET lastTopic = ? WHERE topic_category_id = ?';
-        $updateTitlesIndex = $this->executerRequete($sql, array($title, $category_id));
+        $addLastTopic = $this->executerRequete($sql, array($title, $category_id));
+    } 
+
+    public function getLastTopic() {
+        $sql = 'SELECT * FROM forumIndex ORDER BY id DESC';
+        $getLastTopic = $this->executerRequete($sql, array());
+        return $getLastTopic;
     } 
 
     public function getTopics($category_id){
@@ -75,9 +81,14 @@ class ForumManager extends Manager
         $deleteComment = $this->executerRequete($sql, array($comment_id));
     }
 
+    public function addImg($pseudo, $author_inscription,$author_team,$category_id, $title, $content, $img) {
+        $sql = 'INSERT INTO topic(author, author_inscription, author_team, category_id, title, content, img, date_creation) VALUES(?, ?, ?, ?, ?, ?, ?, NOW())';
+        $addImg = $this->executerRequete($sql, array($pseudo, $author_inscription,$author_team,$category_id, $title, $content, $img));
+    }
 
-
-
-
-
+    public function getImg($pseudo, $category_id) {
+        $sql = 'SELECT img, title, content FROM topic WHERE author = ? AND category_id = ?';
+        $getImg = $this->executerRequete($sql, array($pseudo, $category_id));
+        return $getImg; 
+    }
 }

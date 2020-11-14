@@ -14,7 +14,7 @@
 <section class="content_body">  
     <article>
         <p class="title_pres">Connexion à votre compte personnel</p>
-        <form action="index.php?controller=user&amp;action=userCheck" method="POST" class="registrationForm">
+        <form action="index.php?controller=user&amp;action=userCheck&amp;category_id=11" method="POST" class="registrationForm">
             <h4 class="titleForm"></h4>
             <ul>
                 <li>

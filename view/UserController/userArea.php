@@ -31,10 +31,12 @@
                 </ul>
             </aside>
             <aside>
-                <h4 class="titleForm">Présentation de tes engins?</h4>
+                <h4 class="titleForm">Présentation de tes engins</h4>
 
-                <form method="POST" action="index.php?controller=user&amp;action=addPicture" enctype="multipart/form-data" class="formPres">
+                <form method="POST" action="index.php?controller=user&amp;action=addPicture&amp;category_id=11" enctype="multipart/form-data" class="formPres">
                     <input type="file" name="monfichier" value="" class="choiseButton"><br />
+                    <label for="title">Titre</label>
+                    <input type="text" id="title" name="title" class="titleNewPost"/><br />
                     <textarea id="content" name="content"rows="5" cols="33" placeholder="Décrivez votre bolide en détail ..."></textarea><br />
                     <input type= "submit" name="chargement" value="charger le fichier">
                 </form>
@@ -42,11 +44,12 @@
             <aside>
             <h4 class="titleForm">Mes engins</h4>
             <?php
-                while ($data = $user_img->fetch()){
+                while ($data = $img->fetch()){
             ?>
+                <p><?=htmlspecialchars($data['title'])?></p>
                 <div class="userPres">
                     <p class="imgPres"><img src="public/img/user_img/<?=htmlspecialchars($data['img'])?>" alt="<?=htmlspecialchars($data['img'])?>"></p>
-                    <p class="contentPres"><?=htmlspecialchars($data['content'])?></p>
+                    <p class="contentPres"><?=nl2br(html_entity_decode($data['content']))?></p>
                 </div>
             <?php 
             }
