@@ -52,10 +52,10 @@
                     <li class="buttonMenu about"><a href="index.php?controller=about&amp;action=aboutIndex&amp;test=bonjour">A propos</a></li>
                     <li class="buttonMenu gallery"><a href="index.php?controller=about&amp;action=aboutMeteo">Météo</a></li>
                     <li class="buttonMenu forum"><a href="index.php?controller=forum&amp;action=forumIndex">Forum</a></li>
-                    <li class="buttonMenu contact"><a href="index.php?action=contact#ancre">Contact</a></li>
+                    <li class="buttonMenu contact"><a href="index.php?controller=contact&amp;action=contactIndex">Contact</a></li>
                 </ul>
             </nav>
-            <div><i class="fas fa-phone-square-alt fa-2x"></i><p class="phoneNum">01-02-03-04-05</p></div>
+            <div><i class="fas fa-phone-square-alt fa-2x"></i><p class="phoneNum">0696 12 34 56</p></div>
             
         </header>  
         

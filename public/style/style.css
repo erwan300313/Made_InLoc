@@ -443,7 +443,7 @@ nav{
 
 /* Style registration form */
 
-.registrationForm ul li{
+.registrationForm ul li, .contactForm ul li{
     list-style: none;
     margin-bottom: 30px;
 }
@@ -570,6 +570,41 @@ nav{
 
 #formTopic{
     display: none;
+}
+
+/* Contact Form style */
+
+.contact{
+    display: flex;
+}
+#subject, .contactForm ul li input{
+    height: 30px;
+}
+
+.contactForm ul li{
+    margin-bottom: 20px;
+}
+
+.contactForm ul{
+    padding-left: 10px;
+    padding-right: 20px;
+}
+.blockContactForm
+{
+    width:50%;
+}
+#subject, .contactForm ul li input {
+    width: 100%;
+}
+
+.blockContact{
+    width: 50%;
+}
+
+.blockContact ul li{
+    padding-left:20px;
+    list-style: none;
+    font-size: 1.2em;
 }
 
 

@@ -31,6 +31,16 @@ Class ForumController extends Controller{
         }
     }
 
+    public function addTopic(){
+        if(empty($_POST['title']) OR empty($_POST['content'])){
+            throw new Exception('Un des champs du formulaire d\'ajout de sujet est vide.');
+        }else{
+            $this->forumManager->addTopic($_GET['author'], $_GET['date_inscription'], $_GET['author_team'], $_GET['category_id'], $_POST['title'], $_POST['content']);
+            $this->forumManager->addLastTopic($_POST['title'], $_GET['category_id']);
+            header('Location: index.php?controller=forum&action=forumTopic&cat_topic='. $_GET['category_id'] . '&title=' . $_GET['title']);
+        }
+    }
+
     public function editTopic(){
         $topic = $this->forumManager->getTopic($_GET['topic_id']);
         $this->genererVue(array('topic' => $topic, 'title' => $_GET['title']));
@@ -64,16 +74,6 @@ Class ForumController extends Controller{
         
     }
 
-    public function addTopic(){
-        if(empty($_POST['title']) OR empty($_POST['content'])){
-            throw new Exception('Un des champs du formulaire d\'ajout de sujet est vide.');
-        }else{
-            $this->forumManager->addTopic($_GET['author'], $_GET['date_inscription'], $_GET['author_team'], $_GET['category_id'], $_POST['title'], $_POST['content']);
-            $this->forumManager->addLastTopic($_POST['title'], $_GET['category_id']);
-            header('Location: index.php?controller=forum&action=forumTopic&cat_topic='. $_GET['category_id'] . '&title=' . $_GET['title']);
-        }
-    }
-    
     public function addComment(){
         if(empty($_POST['content'])){
             throw new Exception('Un des champs du formulaire d\'ajout de commentaire est vide.');
@@ -119,7 +119,6 @@ Class ForumController extends Controller{
 
     public function forumUser(){
         $user_img = $this->userManager->getImg($_GET['pseudo']);
-        
         $this->genererVue(array('user_img' => $user_img));
     }
 
