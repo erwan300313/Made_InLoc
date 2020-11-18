@@ -1,4 +1,5 @@
 <?php $this->title = "Page de contact"; ?>
+<?php $this->script ='<script src="public/js/contact/contact.js"></script>';?>
 
 
 <img src="public/img/banner/index_banner.png" alt="banner_background" class="banner_img">
@@ -19,19 +20,23 @@
                 <ul>
                     <li>
                         <label for="firtsName" class="labFormReg"></label>
-                        <input type="text" id="firstName" name="firstName" placeholder="Votre prénom"/>
+                        <input type="text" id="firstName" name="firstName" placeholder="Votre Prénom" required/>
+                        <span id="fistNameSpan"></span>
                     </li>
                     <li>
                         <label for="lastName" class="labFormReg"></label>
-                        <input type="text" id="lastName" name="lastName" placeholder="Votre Nom"/>
+                        <input type="text" id="lastName" name="lastName" placeholder="Votre Nom" required/>
+                        <span id="lastNameSpan"></span>
                     </li>
                     <li>
                         <label for="mail" class="labFormReg"></label>
                         <input type="email" id="mail" name="mail" placeholder="Mail"/>
+                        <span id="mailVerif">Ex : test@madinloc.fr</span>
                     </li>
                     <li>
                         <label for="tel" class="labFormReg"></label>
-                        <input type="tel" id="mail" name="tel" placeholder="Telephone"/>
+                        <input type="tel" id="tel" name="tel" placeholder="Telephone"/>
+                        <span id="phoneVerif">Ex : 0102030405</span>
                     </li>
                     <li>
                         <label for="subject"></label>
@@ -45,9 +50,11 @@
                             <option value="préparation">Préparation</option>
                         </select>
                     </li>
-                    <textarea id="contact_content" name="content"rows="5" cols="33" placeholder="Votre message..."></textarea><br />
+                    <textarea id="contact_content" name="content"rows="5" cols="33" placeholder="Votre message..."></textarea>
+                    <span id="contentSpan"></span>
+                    <br />
                 </ul>
-                <input type="submit" value="Valider votre saisie" id=""/>            
+                <input type="submit" value="Valider votre message" id=""/>            
             </form>
         </aside>  
         
