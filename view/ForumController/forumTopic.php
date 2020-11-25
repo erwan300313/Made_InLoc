@@ -17,7 +17,7 @@
             if(isset($_SESSION['pseudo'])){
             ?>
                 <p id="newTopic"><a href="" id="newTopic">Ajouter un nouveau post</a></p>
-                <form method="POST" action="index.php?controller=forum&amp;action=addTopic&amp;author=<?=$_SESSION['pseudo']?>&amp;date_inscription=<?=$_SESSION['date_inscription']?>&amp;author_team=<?=$_SESSION['team']?>&amp;category_id=<?=$_GET['category_id']?>&amp;title=<?=$_GET['title']?>" enctype="multipart/form-data" id="formTopic">
+                <form method="POST" action="index.php?controller=forum&amp;action=addTopic&amp;author=<?=$_SESSION['pseudo']?>&amp;date_inscription=<?=$_SESSION['date_inscription']?>&amp;author_team=<?=$_SESSION['team']?>&amp;catTopic=<?=$_GET['catTopic']?>&amp;title=<?=$_GET['title']?>" enctype="multipart/form-data" id="formTopic">
                     <label for="title">Titre</label>
                     <input type="text" id="title" name="title" class="titleNewPost"/><br />
                     <textarea id="content" name="content"rows="5" cols="33" placeholder="Rédiger votre nouveau post ici"></textarea><br />
@@ -41,7 +41,7 @@
                             ?>
                             <p class="titleButton">
                                 <a href="index.php?controller=forum&amp;action=editTopic&amp;topic_id=<?=$topic['id']?>&amp;title=<?=$_GET['title']?>">Modifier</a>
-                                <a href="index.php?controller=forum&amp;action=viewDeleteTopic&amp;topic_id=<?=$topic['id']?>&amp;title=<?=$_GET['title']?>">Supprimer</a>
+                                <a href="index.php?controller=forum&amp;action=viewDeleteTopic&amp;topic_id=<?=$topic['id']?>&amp;title=<?=$_GET['title']?>&amp;catTopic=<?=$_GET['catTopic']?>">Supprimer</a>
                             </p>
                             <?php
                             }

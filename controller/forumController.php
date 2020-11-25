@@ -22,7 +22,7 @@ Class ForumController extends Controller{
     }
 
     public function forumTopic(){ /* Voir pour fetchAll pour verifier retour de BDD */
-        $datas = $this->forumManager->getTopics($_GET['cat_topic']);
+        $datas = $this->forumManager->getTopics($_GET['catTopic']);
         $topics = $datas->fetchAll();
         if(!$topics){
             throw new Exception('Aucun topic n\'est disponible.');
@@ -35,9 +35,9 @@ Class ForumController extends Controller{
         if(empty($_POST['title']) OR empty($_POST['content'])){
             throw new Exception('Un des champs du formulaire d\'ajout de sujet est vide.');
         }else{
-            $this->forumManager->addTopic($_GET['author'], $_GET['date_inscription'], $_GET['author_team'], $_GET['category_id'], $_POST['title'], $_POST['content']);
-            $this->forumManager->addLastTopic($_POST['title'], $_GET['category_id']);
-            header('Location: index.php?controller=forum&action=forumTopic&cat_topic='. $_GET['category_id'] . '&title=' . $_GET['title']);
+            $this->forumManager->addTopic($_GET['author'], $_GET['date_inscription'], $_GET['author_team'], $_GET['catTopic'], $_POST['title'], $_POST['content']);
+            $this->forumManager->addLastTopic($_POST['title'], $_GET['catTopic']);
+            header('Location: index.php?controller=forum&action=forumTopic&catTopic='. $_GET['catTopic'] . '&title=' . $_GET['title']);
         }
     }
 
@@ -49,7 +49,7 @@ Class ForumController extends Controller{
     
     public function updateTopic(){
         $this->forumManager->updateTopic($_GET['topic_id'], $_POST['content']);
-        header('Location: index.php?controller=forum&action=forumTopic&cat_topic='. $_GET['category_id'] . '&title=' . $_GET['title']);
+        header('Location: index.php?controller=forum&action=forumTopic&catTopic='. $_GET['category_id'] . '&title=' . $_GET['title']);
     }
 
     public function viewDeleteTopic(){
@@ -59,7 +59,7 @@ Class ForumController extends Controller{
 
     public function deleteTopic(){
         $this->forumManager->deleteTopic($_GET['topic_id']);
-        header('Location: index.php?controller=forum&action=forumTopic&category_id='. $_GET['category_id'] . '&title=' . $_GET['title']);
+        header('Location: index.php?controller=forum&action=forumTopic&catTopic='. $_GET['catTopic'] . '&title=' . $_GET['title']);
     }
 
     public function forumComment(){
