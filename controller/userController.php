@@ -49,7 +49,7 @@ Class UserController extends Controller{
             $pseudo = $_POST['pseudo'];
             $password = $_POST['password'];
         }else{
-            throw new Exception('Il y as un probleme dans votre pseudo ou votre mot de passe.');
+            throw new Exception('Il y as un probleme dans votre pseudo ou votre mot de passe.' . $_POST['pseudo'] . $_POST['password']);
         }
 
         $user = $this->userManager->getUser($pseudo);
@@ -63,7 +63,7 @@ Class UserController extends Controller{
                 $_SESSION['team'] = $user['team'];
                 $_SESSION['date_inscription'] = $user['date_inscription'];
                 $_SESSION['id'] = $user['id'];
-                header('Location: index.php?controller=user&action=userArea&category_id=' . $_GET['category_id']); 
+                header('Location: user/userArea/' . $_GET['category_id']); 
             }else{
                 throw new Exception('Il y as un probleme dans votre mot de pass.');
             }

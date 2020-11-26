@@ -18,5 +18,10 @@ Class ContactController extends Controller{
         $this->genererVue(array()); 
     }
 
+    public function mail(){
+        mail('e.bridier@hotmail.com', 'Mon Sujet', $_POST['lastName']);
+        header('Location: contact/contactIndex');
+    }
+
     
 }

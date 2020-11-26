@@ -51,7 +51,7 @@
                 </p>
                 <div class="forumCommentContent">
                    <p><?=nl2br(html_entity_decode($comment['content']))?></p>
-                   <p class="deleteButton"><a href="index.php?controller=forum&amp;action=deleteComment&amp;comment_id=<?=$comment['id']?>&amp;topic_id=<?=$topic['id']?>&amp;title=<?=$_GET['title']?>">Supprimer ce commentaire définitivement</a></p>
+                   <p class="deleteButton"><a href="index.php?controller=forum&amp;action=deleteComment&amp;title=<?=$_GET['title']?>&amp;topic_id=<?=$topic['id']?>&amp;comment_id=<?=$comment['id']?>">Supprimer ce commentaire définitivement</a></p>
                 </div>
             </div>
         </aside>

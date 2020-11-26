@@ -1,6 +1,6 @@
 <?php
 
-require_once("model/manager.php");
+require_once("framework/model.php");
 
 
 class AboutManager extends Manager

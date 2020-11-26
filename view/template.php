@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
+        <base href="<?= $racineWeb ?>" >
         <title><?= $title ?></title>
         <link href="public/style/style.css" rel="stylesheet" /> 
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
@@ -41,7 +42,7 @@
                 <?php
                 }else{
                 ?>
-                <p><a href="index.php?controller=user&amp;action=userLogin"><i class="far fa-user"></i> Se connecter</a> / <a href="index.php?controller=user&amp;action=userRegistration"><i class="fas fa-sign-in-alt"></i> S'inscrire</a></p>
+                <p><a href="user/userLogin"><i class="far fa-user"></i> Se connecter</a> / <a href="user/userRegistration"><i class="fas fa-sign-in-alt"></i> S'inscrire</a></p>
                 <?php
                 }
                 ?>
@@ -49,10 +50,10 @@
             <nav>
                 <ul class="menu">
                     <li class="buttonMenu home"><a href="index.php">Accueil</a></li>
-                    <li class="buttonMenu about"><a href="index.php?controller=about&amp;action=aboutIndex">A propos</a></li>
-                    <li class="buttonMenu gallery"><a href="index.php?controller=about&amp;action=aboutMeteo">Météo</a></li>
-                    <li class="buttonMenu forum"><a href="index.php?controller=forum&amp;action=forumIndex">Forum</a></li>
-                    <li class="buttonMenu contact"><a href="index.php?controller=contact&amp;action=contactIndex">Contact</a></li>
+                    <li class="buttonMenu about"><a href="about/aboutIndex">A propos</a></li>
+                    <li class="buttonMenu gallery"><a href="about/aboutMeteo">Météo</a></li>
+                    <li class="buttonMenu forum"><a href="forum/forumIndex">Forum</a></li>
+                    <li class="buttonMenu contact"><a href="contact/contactIndex">Contact</a></li>
                 </ul>
             </nav>
             <div><i class="fas fa-phone-square-alt fa-2x"></i><p class="phoneNum">0696 12 34 56</p></div>

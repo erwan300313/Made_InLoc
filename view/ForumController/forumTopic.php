@@ -33,15 +33,15 @@
                 foreach ($topics as $keys => $topic){
                 ?>
                     <li>
-                        <p class="titleSection"><a href="index.php?controller=forum&amp;action=forumComment&amp;topic_id=<?=$topic['id']?>&amp;title=<?=$_GET['title']?>"><i class="fas fa-chevron-circle-right"></i><?=htmlspecialchars($topic['title'])?></a></p>
+                        <p class="titleSection"><a href="forum/forumComment/<?=$_GET['title']?>/<?=$topic['id']?>"><i class="fas fa-chevron-circle-right"></i><?=htmlspecialchars($topic['title'])?></a></p>
                         <div class="dateCreation">
                             <p >Posté le <?=htmlspecialchars($topic['date_creation'])?> par <?=htmlspecialchars($topic['author'])?></p>
                             <?php
                             if(isset($_SESSION['pseudo']) AND $_SESSION['pseudo'] == $topic['author']){
                             ?>
                             <p class="titleButton">
-                                <a href="index.php?controller=forum&amp;action=editTopic&amp;topic_id=<?=$topic['id']?>&amp;title=<?=$_GET['title']?>">Modifier</a>
-                                <a href="index.php?controller=forum&amp;action=viewDeleteTopic&amp;topic_id=<?=$topic['id']?>&amp;title=<?=$_GET['title']?>&amp;catTopic=<?=$_GET['catTopic']?>">Supprimer</a>
+                                <a href="forum/editTopic/<?=$_GET['title']?>/<?=$topic['id']?>">Modifier</a>
+                                <a href="forum/viewDeleteTopic/<?=$_GET['title']?>/<?=$_GET['catTopic']?>/<?=$topic['id']?>">Supprimer</a>
                             </p>
                             <?php
                             }

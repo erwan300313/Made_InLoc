@@ -23,7 +23,7 @@
                     if($data['category_id'] == 4){ 
                         ?>
                         <li>
-                            <p class="titleSection"><i class="fas fa-chevron-circle-right"></i><a href="index.php?controller=forum&amp;action=forumTopic&amp;title=<?=$data['title']?>&amp;catTopic=<?=$data['topic_category_id']?>"><?=$data['title']?></a></p>
+                            <p class="titleSection"><i class="fas fa-chevron-circle-right"></i><a href="forum/forumTopic/<?=$data['title']?>/<?=$data['topic_category_id']?>"><?=$data['title']?></a></p>
                             <div class="lastTopic">
                                 <p><u>Dernier message : </u><br /><?=htmlspecialchars($data['lastTopic'])?></p>
                             </div>
@@ -32,7 +32,7 @@
                     }elseif($data['category_id'] == 5){ /* Membre présentation */
                         ?>
                         <li>
-                            <p class="titleSection"><i class="fas fa-chevron-circle-right"></i><a href="index.php?controller=forum&amp;action=forumTopic&amp;title=<?=$data['title']?>&amp;catTopic=<?=$data['topic_category_id']?>"><?=$data['title']?></a></p>
+                            <p class="titleSection"><i class="fas fa-chevron-circle-right"></i><a href="forum/forumTopic/<?=$data['title']?>/<?=$data['topic_category_id']?>"><?=$data['title']?></a></p>
                             <div class="lastTopic">
                                 <p><u>Dernier message : </u><br /><?=htmlspecialchars($data['lastTopic'])?></p>
                             </div>
@@ -51,7 +51,7 @@
                     if($data['category_id'] == 1){
                         ?>
                         <li>
-                            <p class="titleSection"><i class="fas fa-chevron-circle-right"></i><a href="index.php?controller=forum&amp;action=forumTopic&amp;title=<?=$data['title']?>&amp;catTopic=<?=$data['topic_category_id']?>"><?=$data['title']?></a></p>
+                            <p class="titleSection"><i class="fas fa-chevron-circle-right"></i><a href="forum/forumTopic/<?=$data['title']?>/<?=$data['topic_category_id']?>"><?=$data['title']?></a></p>
                             <div class="lastTopic">
                                 <p><u>Dernier message : </u><br /><?=htmlspecialchars($data['lastTopic'])?></p>
                             </div>
@@ -70,7 +70,7 @@
                         if($data['category_id'] == 2){
                             ?>
                             <li>
-                                <p class="titleSection"><i class="fas fa-chevron-circle-right"></i><a href="index.php?controller=forum&amp;action=forumTopic&amp;title=<?=$data['title']?>&amp;catTopic=<?=$data['topic_category_id']?>"><?=$data['title']?></a></p>
+                                <p class="titleSection"><i class="fas fa-chevron-circle-right"></i><a href="forum/forumTopic/<?=$data['title']?>/<?=$data['topic_category_id']?>"><?=$data['title']?></a></p>
                                 <div class="lastTopic">
                                     <p><u>Dernier message : </u><br /><?=htmlspecialchars($data['lastTopic'])?></p>
                                 </div>
@@ -90,7 +90,7 @@
                         if($data['category_id'] == 3){
                             ?>
                             <li>
-                                <p class="titleSection"><i class="fas fa-chevron-circle-right"></i><a href="index.php?controller=forum&amp;action=forumTopic&amp;title=<?=$data['title']?>&amp;catTopic=<?=$data['topic_category_id']?>"><?=$data['title']?></a></p>
+                                <p class="titleSection"><i class="fas fa-chevron-circle-right"></i><a href="forum/forumTopic/<?=$data['title']?>/<?=$data['topic_category_id']?>"><?=$data['title']?></a></p>
                                 <div class="lastTopic">
                                     <p><u>Dernier message : </u><br /><?=htmlspecialchars($data['lastTopic'])?></p>
                                 </div>

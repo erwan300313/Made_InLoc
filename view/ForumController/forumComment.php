@@ -18,7 +18,7 @@
         if(isset($_SESSION['pseudo'])){
         ?>
             <p id="newTopic"><a href="">Ajouter un nouveau commentaire</a></p>
-            <form method="POST" action="index.php?controller=forum&amp;action=addComment&amp;topic_id=<?=$topic['id']?>&amp;author=<?=$_SESSION['pseudo']?>&amp;author_team=<?=$_SESSION['team']?>&amp;author_inscription=<?=$_SESSION['date_inscription']?>&amp;title=<?=$_GET['title']?>" enctype="multipart/form-data" id="formTopic">
+            <form method="POST" action="index.php?controller=forum&amp;action=addComment&amp;catTopic=<?=$topic['id']?>&amp;author=<?=$_SESSION['pseudo']?>&amp;author_team=<?=$_SESSION['team']?>&amp;author_inscription=<?=$_SESSION['date_inscription']?>&amp;title=<?=$_GET['title']?>" enctype="multipart/form-data" id="formTopic">
                 <textarea id="content" name="content"rows="5" cols="33" placeholder="Rédiger votre commentaire ici"></textarea><br />
                 <input type= "submit" name="chargement" value="Envoyer le commentaire">
             </form>
@@ -64,13 +64,13 @@
                                     /* Nothing */        
                                 }else{
                                 ?>
-                                <a href="index.php?controller=forum&amp;action=reportComment&amp;comment_id=<?=$data['id']?>&amp;topic_id=<?=$topic['id']?>&amp;title=<?=$_GET['title']?>">Signaler</a>
+                                <a href="index.php?controller=forum&amp;action=reportComment&amp;comment_id=<?=$data['id']?>&amp;catTopic=<?=$topic['id']?>&amp;title=<?=$_GET['title']?>">Signaler</a>
                                 <?php
                                 }
                                 if(isset($_SESSION['pseudo']) AND $_SESSION['pseudo'] == $data['author']){
                                 ?>
-                                <a href="index.php?controller=forum&amp;action=editComment&amp;topic_id=<?=$topic['id']?>&amp;comment_id=<?=$data['id']?>&amp;title=<?=$_GET['title']?>">Modifier</a>
-                                <a href="index.php?controller=forum&amp;action=viewDeleteComment&amp;topic_id=<?=$topic['id']?>&amp;comment_id=<?=$data['id']?>&amp;title=<?=$_GET['title']?>">Supprimer</a>
+                                <a href="forum/editComment/<?=$_GET['title']?>/<?=$data['id']?>/<?=$topic['id']?>">Modifier</a>
+                                <a href="forum/viewDeleteComment/<?=$_GET['title']?>/<?=$data['id']?>/<?=$topic['id']?>">Supprimer</a>
                                 <?php
                                 }
                                 ?>

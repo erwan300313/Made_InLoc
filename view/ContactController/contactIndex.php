@@ -15,7 +15,7 @@
 <section class="content_body">
     <article class="contact">  
         <aside class="blockContactForm">
-            <form action="index.php?controller=user&amp;action=addUser&amp;team=2" method="post" class="contactForm">
+            <form action="index.php?controller=contact&amp;action=mail" method="post" class="contactForm">
                 <h4 class="titleForm">Formulaire de contact</h4>
                 <ul>
                     <li>

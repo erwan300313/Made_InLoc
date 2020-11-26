@@ -16,8 +16,9 @@ public function __construct($action, $controleur = "") {
 
 public function generate($data) {
     $content = $this->generateFile($this->file, $data);
+    $racineWeb = Configuration::get("racineWeb", "/");
     $view = $this->generateFile('view/template.php',
-    array('title' => $this->title, 'content' => $content, 'script' => $this->script));
+    array('title' => $this->title, 'content' => $content, 'script' => $this->script, 'racineWeb' => $racineWeb));
     echo $view;
 }
 
