@@ -42,12 +42,12 @@
                         <label for="subject"></label>
                         <select name="subject" id="subject">
                             <option value="">Objet du contact</option>
-                            <option value="location">Location</option>
-                            <option value="circuit">Circuit découverte</option>
-                            <option value="technique">Technique</option>
-                            <option value="initiation">Initiation</option>
-                            <option value="entretien">Entretien</option>
-                            <option value="préparation">Préparation</option>
+                            <option value="Location">Location</option>
+                            <option value="Circuit découverte">Circuit découverte</option>
+                            <option value="Question technique">Question technique</option>
+                            <option value="Initiation">Initiation</option>
+                            <option value="Entretien">Entretien</option>
+                            <option value="Préparation">Préparation</option>
                         </select>
                     </li>
                     <textarea id="contact_content" name="content"rows="5" cols="33" placeholder="Votre message..."></textarea>
