@@ -11,5 +11,9 @@
 <div class="block_invisible"></div>
 
 <section class="content_body">
-    <p>Votre message à bien été transmis, toute notre équippe se mobilise à fin de vous répondre dans un les plus bref délais.</p>
+    <article>
+    <h3>Votre message a bien été envoyer</h3>
+        <p>Toute notre équipe se mobilise à fin de vous répondre dans les plus brefs délais.</p>
+        <p>Pour de plus ample information n'hésitez pas à consulter notre <a href="forum/forumIndex">Forum</a>.</p>
+    </article>
 </section>
