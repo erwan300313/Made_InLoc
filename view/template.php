@@ -27,37 +27,55 @@
     <body>
         <div class="superiorBlock"></div>
         <header>
-            <div class="logo">
-                <h1>Made <strong>InLoc</strong></h1>
-            </div>
-            <div class="userModul">
-                <?php
-                if(isset($_SESSION['pseudo'])){
-                ?>
-                <p>Bonjour <?=$_SESSION['pseudo']?></p>
-                <div class="membreButton">
-                    <p><i class="fas fa-house-user"></i><a href="index.php?controller=user&amp;action=userArea&amp;category_id=11">Espace membre /</a></p>
-                    <p><i class="fas fa-sign-out-alt"></i><a href="index.php?controller=user&amp;action=logOut">Déconnexion</a></p> 
+            <div class="rightBlock">
+                <div class="logo">
+                    <h1>Made <strong>InLoc</strong></h1>
                 </div>
-                <?php
-                }else{
-                ?>
-                <p><a href="user/userLogin"><i class="far fa-user"></i> Se connecter</a> / <a href="user/userRegistration"><i class="fas fa-sign-in-alt"></i> S'inscrire</a></p>
-                <?php
-                }
-                ?>
+                <div class="userModul">
+                    <?php
+                    if(isset($_SESSION['pseudo'])){
+                    ?>
+                    <p>Bonjour <?=$_SESSION['pseudo']?></p>
+                    <div class="membreButton">
+                        <p><i class="fas fa-house-user"></i><a href="index.php?controller=user&amp;action=userArea&amp;category_id=11">Espace membre /</a></p>
+                        <p><i class="fas fa-sign-out-alt"></i><a href="index.php?controller=user&amp;action=logOut">Déconnexion</a></p> 
+                    </div>
+                    <?php
+                    }else{
+                    ?>
+                    <p><a href="user/userLogin"><i class="far fa-user"></i> Se connecter</a> / <a href="user/userRegistration"><i class="fas fa-sign-in-alt"></i> S'inscrire</a></p>
+                    <?php
+                    }
+                    ?>
+                </div>
             </div>
-            <nav>
-                <ul class="menu">
-                    <li class="buttonMenu home"><a href="index.php">Accueil</a></li>
-                    <li class="buttonMenu about"><a href="about/aboutIndex">A propos</a></li>
-                    <li class="buttonMenu gallery"><a href="about/aboutMeteo">Météo</a></li>
-                    <li class="buttonMenu forum"><a href="forum/forumIndex">Forum</a></li>
-                    <li class="buttonMenu contact"><a href="contact/contactIndex">Contact</a></li>
-                </ul>
-            </nav>
-            <div><i class="fas fa-phone-square-alt fa-2x"></i><p class="phoneNum">0696 12 34 56</p></div>
-            
+            <div class="leftBlock">
+                <nav id="burgerMenu" role="navigation">
+                        <div id="menuToggle">
+                        <input type="checkbox" />
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <ul id="menu">
+                            <li class="buttonMenu"><a href="index.php">Accueil</a></li>
+                            <li class="buttonMenu"><a href="about/aboutIndex">A propos</a></li>
+                            <li class="buttonMenu"><a href="about/aboutMeteo">Météo</a></li>
+                            <li class="buttonMenu"><a href="forum/forumIndex">Forum</a></li>
+                            <li class="buttonMenu"><a href="contact/contactIndex">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <nav id="menuLarge">
+                    <ul class="menu">
+                        <li class="buttonMenu"><a href="index.php">Accueil</a></li>
+                        <li class="buttonMenu"><a href="about/aboutIndex">A propos</a></li>
+                        <li class="buttonMenu"><a href="about/aboutMeteo">Météo</a></li>
+                        <li class="buttonMenu"><a href="forum/forumIndex">Forum</a></li>
+                        <li class="buttonMenu"><a href="contact/contactIndex">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="phoneContact"><i class="fas fa-phone-square-alt fa-2x"></i><p class="phoneNum">0696 12 34 56</p></div>
+            </div>
         </header>  
         
         <section class="contentSection"> 

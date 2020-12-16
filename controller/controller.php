@@ -25,7 +25,8 @@ abstract class Controller{
     }
     else {
       $classeControleur = get_class($this);
-      throw new Exception("Action '$action' non définie dans la classe $classeControleur");
+      /* throw new Exception("Action '$action' non définie dans la classe $classeControleur"); Exeption for dev */
+      throw new Exception("La page à laquelle vous souhaitez accéder n'est pas disponible");
     }
   }
 

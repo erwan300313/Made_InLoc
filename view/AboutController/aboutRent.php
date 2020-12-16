@@ -21,39 +21,43 @@
         <aside id="smallSize">
             <h3>Catégorie 125cc</h3>
             <div class="midSize">
-            <?php
-            while ($data = $get125Price->fetch()){
+                <?php
+                foreach ($getPrices as $keys => $data){
+                    if($data['type'] == 125){
+                    ?>
+                        <ul>
+                            <li><?=htmlspecialchars($data['duration'])?></li> 
+                            <li><?=htmlspecialchars($data['price'])?>€ </li>
+                            <li><?=htmlspecialchars($data['km_included'])?> Km inclus</li>
+                            <li><?=htmlspecialchars($data['extra_day'])?> € / Jour sup</li>
+                            <li><?=htmlspecialchars($data['caution'])?> € de caution</li>
+                            <li><p><a href="">Reserver</a></p</li>
+                        </ul>
+                    <?php
+                    }
+                }
                 ?>
-                <ul>
-                    <li><?=htmlspecialchars($data['duration'])?></li> 
-                    <li><?=htmlspecialchars($data['price'])?>€ </li>
-                    <li><?=htmlspecialchars($data['km_included'])?> Km inclus</li>
-                    <li><?=htmlspecialchars($data['extra_day'])?> € / Jour sup</li>
-                    <li><?=htmlspecialchars($data['caution'])?> € de caution</li>
-                    <li><p><a href="">Reserver</a></p</li>
-                </ul>
-                <?php 
-            }
-            ?>
             </div>
         </aside>
         <aside id="midSize">
             <h3>Catégorie 800cc</h3>
             <div class="midSize">
-            <?php
-            while ($data = $get800Price->fetch()){
+                <?php
+                foreach ($getPrices as $keys => $data){
+                    if($data['type'] == 800){
+                    ?>
+                        <ul>
+                            <li><?=htmlspecialchars($data['duration'])?></li> 
+                            <li><?=htmlspecialchars($data['price'])?>€ </li>
+                            <li><?=htmlspecialchars($data['km_included'])?> Km inclus</li>
+                            <li><?=htmlspecialchars($data['extra_day'])?> € / Jour sup</li>
+                            <li><?=htmlspecialchars($data['caution'])?> € de caution</li>
+                            <li><p><a href="">Reserver</a></p</li>
+                        </ul>
+                    <?php
+                    }
+                }
                 ?>
-                <ul>
-                    <li><?=htmlspecialchars($data['duration'])?></li> 
-                    <li><?=htmlspecialchars($data['price'])?>€ </li>
-                    <li><?=htmlspecialchars($data['km_included'])?> Km inclus</li>
-                    <li><?=htmlspecialchars($data['extra_day'])?> € / Jour sup</li>
-                    <li><?=htmlspecialchars($data['caution'])?> € de caution</li>
-                    <li><p><a href="">Reserver</a></p></li>
-                </ul>
-                <?php 
-            }
-            ?>
             </div>
         </aside>
     </article>

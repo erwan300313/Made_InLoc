@@ -18,10 +18,13 @@ Class ForumController extends Controller{
         $titles = $this->forumManager->getIndexTitles();
         $lastTopics = $this->forumManager->getLastTopic();        
         $datas = $titles->fetchAll();
+        if(!$titles){
+            throw new Exception('Un problème est survenue lors de l\'accès à notre forum, nous mettons tout en oeuvre pour régler cela au plus vite.');
+        }
         $this->genererVue(array('datas' => $datas, 'lastTopics' =>$lastTopics)); 
     }
 
-    public function forumTopic(){ /* Voir pour fetchAll pour verifier retour de BDD */
+    public function forumTopic(){
         $datas = $this->forumManager->getTopics($_GET['catTopic']);
         $topics = $datas->fetchAll();
         if(!$topics){
@@ -43,9 +46,13 @@ Class ForumController extends Controller{
 
     public function editTopic(){
         $topic = $this->forumManager->getTopic($_GET['catTopic']);
-        $this->genererVue(array('topic' => $topic, 'title' => $_GET['title']));
+        if($topic['author'] != $_SESSION['pseudo']){
+            throw new Exception('Vous ne pouver pas modifier un post dont vous n\'etes pas l\'auteur.');
+        }else{
+            $this->genererVue(array('topic' => $topic, 'title' => $_GET['title']));
+        }
+        
     }
-    
     
     public function updateTopic(){
         $this->forumManager->updateTopic($_GET['topic_id'], $_POST['content']);
@@ -53,30 +60,38 @@ Class ForumController extends Controller{
     }
 
     public function viewDeleteTopic(){
-        $topic = $this->forumManager->getTopic($_GET['topic_id']);
-        $this->genererVue(array('topic' => $topic, 'title' => $_GET['title']));
+        $topic = $this->forumManager->getTopic($_GET['catTopic']);
+        if($topic['author'] != $_SESSION['pseudo']){
+            throw new Exception('Vous ne pouvez pas supprimer un post dont vous n\'êtes pas l\'auteur.');
+        }else{
+            $this->genererVue(array('topic' => $topic, 'title' => $_GET['title']));
+        }
+        
     }
 
     public function deleteTopic(){
-        $this->forumManager->deleteTopic($_GET['topic_id']);
-        header('Location: forum/forumTopic/'. $_GET['title'] . '/' . $_GET['catTopic']);
+        if(isset($_GET['topic_id'])){
+            $this->forumManager->deleteTopic($_GET['topic_id']);
+            header('Location: forum/forumTopic/'. $_GET['title'] . '/' . $_GET['catTopic']);
+        }else{
+            throw new Exception('Un problème est survenue pendant la suppression du post.');
+        }
+        
     }
 
     public function forumComment(){
         $topic = $this->forumManager->getTopic($_GET['catTopic']);
-        
         if(!$topic){
             throw new Exception('Ce topic n\'est pas disponible.');
         }else{
             $comments = $this->forumManager->getComments($_GET['catTopic']);
             $this->genererVue(array('topic' => $topic, 'comments' => $comments, 'title' => $_GET['title'])); 
-        }
-        
+        }  
     }
 
     public function addComment(){
         if(empty($_POST['content'])){
-            throw new Exception('Un des champs du formulaire d\'ajout de commentaire est vide.');
+            throw new Exception('Vous devez saisir un commentaire avant de l\'envoyer.');
         }else{
             $this->forumManager->addComment($_GET['catTopic'], $_GET['author'], $_GET['author_team'], $_GET['author_inscription'], $_POST['content']);
             header('Location: forum/forumComment/'. $_GET['title'] . '/' . $_GET['catTopic']);
@@ -93,7 +108,11 @@ Class ForumController extends Controller{
     public function editComment(){
         $topic = $this->forumManager->getTopic($_GET['topic_id']);
         $comment = $this->forumManager->getComment($_GET['catTopic']);
-        $this->genererVue(array('topic' => $topic, 'comment' => $comment, 'title' => $_GET['title']));
+        if($comment['author'] != $_SESSION['pseudo']){
+            throw new Exception('Vous ne pouver pas modifier un commentaire dont vous n\'etes pas l\'auteur.');
+        }else{
+            $this->genererVue(array('topic' => $topic, 'comment' => $comment, 'title' => $_GET['title']));
+        }
     }
 
     public function updateComment(){
@@ -102,9 +121,12 @@ Class ForumController extends Controller{
     }
 
     public function viewDeleteComment(){
-        $topic = $this->forumManager->getTopic($_GET['topic_id']);
         $comment = $this->forumManager->getComment($_GET['catTopic']);
-        $this->genererVue(array('topic' => $topic, 'comment' => $comment));
+        if($comment['author'] != $_SESSION['pseudo']){
+            throw new Exception('Vous ne pouver pas supprimer un commentaire dont vous n\'etes pas l\'auteur.');
+        }else{
+            $this->genererVue(array('comment' => $comment)); 
+        }        
     }
 
     public function deleteComment(){
@@ -121,5 +143,4 @@ Class ForumController extends Controller{
         $user_img = $this->userManager->getImg($_GET['pseudo']);
         $this->genererVue(array('user_img' => $user_img));
     }
-
 }

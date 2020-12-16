@@ -70,7 +70,7 @@
                                 if(isset($_SESSION['pseudo']) AND $_SESSION['pseudo'] == $data['author']){
                                 ?>
                                 <a href="forum/editComment/<?=$_GET['title']?>/<?=$data['id']?>/<?=$topic['id']?>">Modifier</a>
-                                <a href="forum/viewDeleteComment/<?=$_GET['title']?>/<?=$data['id']?>/<?=$topic['id']?>">Supprimer</a>
+                                <a href="forum/viewDeleteComment/<?=$_GET['title']?>/<?=$data['id']?>">Supprimer</a>
                                 <?php
                                 }
                                 ?>

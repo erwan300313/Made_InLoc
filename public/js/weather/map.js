@@ -7,11 +7,26 @@ class Map{
         this.mq = new Weather('3569907,3569926,3569928,3570392,3570396,3570412,3570675,3571097,3569915', 'fr', 'metric', '6b44608f0b605faa50e856f83f912b2c')
         this.myMap = null;
         this.appId = "6b44608f0b605faa50e856f83f912b2c";
-        this.initMap();
+        this.checkzoom();
         this.mqMarker();
     }
+
+    checkzoom(){
+        
+        let width = document.documentElement.clientWidth;
+       
+        if(width < 768){
+            this.zoom = 10;
+            console.log(this.zoom);
+        }else{
+            this.zoom = 11;
+        } 
+
+        this.initMap();
+    }
     
-    initMap(){
+    initMap(){        
+
        this.myMap = L.map(this.id,{scrollWheelZoom: false, dragging: false}).setView([this.lat, this.lon], this.zoom);
         
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',{
@@ -20,6 +35,9 @@ class Map{
             zoomOffset: -1,
             accessToken: 'pk.eyJ1IjoiZXJ3YW5iIiwiYSI6ImNrYWt6dmc4YjBwZHUyc3BpZmU2cnJ0aDEifQ._CCV-ZTOATCci6TWbpEIMQ'
         }).addTo(this.myMap);
+
+        console.log(this.zoom);
+        
     }
     
     async mqMarker(){
@@ -47,7 +65,7 @@ class Map{
         })     
     }
     
-    event(weather){ // Voir avec JF si utilité de garder le champs meteo en direct ?
+    event(weather){
         let blocDonnee = document.getElementById("weatherDetail");
         blocDonnee.style.display = "block";
         

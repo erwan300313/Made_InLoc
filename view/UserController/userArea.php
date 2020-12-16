@@ -44,12 +44,13 @@
             <aside>
             <h4 class="titleForm">Mes engins</h4>
             <?php
-                while ($data = $img->fetch()){
-            ?>
-                <p><?=htmlspecialchars($data['title'])?></p>
+                foreach ($datas as $keys => $data){
+                ?>
                 <div class="userPres">
+                <p><?=htmlspecialchars($data['title'])?></p>
                     <p class="imgPres"><img src="public/img/user_img/<?=htmlspecialchars($data['img'])?>" alt="<?=htmlspecialchars($data['img'])?>"></p>
                     <p class="contentPres"><?=nl2br(html_entity_decode($data['content']))?></p>
+                    <h4 class="titleForm"></h4>
                 </div>
             <?php 
             }

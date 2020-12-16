@@ -2,7 +2,7 @@
 body{
     width: 100%;
     max-width: 1440px;
-    margin: 0;
+    margin: auto;
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -11,13 +11,13 @@ body{
     background-color: rgb(240,145,0);
 }
 
-
 .userModul a{
     text-decoration: none;
 }
 
 .userModul p{
     margin:0;
+    text-align: center;
 }
 
 .membreButton{
@@ -32,6 +32,20 @@ header{
     justify-content: space-around;
     align-items: center;
     z-index: 3;
+}
+
+.rightBlock, .leftBlock{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.rightBlock{
+    width: 40%;
+}
+
+.leftBlock{
+    width: 60%;
 }
 
 .logo{
@@ -50,6 +64,10 @@ header{
     font-weight: 400;
 }
 
+#burgerMenu{
+    display: none;
+}
+
 nav{
     display: inline-block;
 }
@@ -60,7 +78,7 @@ nav{
 
 .menu li{
     list-style: none;
-    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .menu li a{
@@ -130,6 +148,8 @@ nav{
 
 .banner_img{
     position: fixed;
+    width: 100%;
+    max-width: 1440px;
     top:60px;
     z-index: 1;
 }
@@ -171,12 +191,17 @@ nav{
 
 .block_invisible{
     height: 200px;
+    background-color:  rgb(245, 245, 245);
 } 
 
 #services, #weather{
     text-align: center;
     padding-bottom: 20px;
     border-bottom: 2px solid rgb(169,69,19);
+}
+
+#weather{
+    display: flex;
 }
 
 .services{
@@ -435,6 +460,7 @@ nav{
     width: 130px;
     border: 1px solid black;
     text-align: center;
+    background-color: rgb(241, 198, 56);
 }
 
 #block_weatherDetail h4, #block_weatherDetail p{
@@ -470,21 +496,12 @@ nav{
 }
 
 /* Style userPresentation */
-.userPres{
-    display: flex;
-    justify-content: space-between;
-}
-
-.imgPres{
-    width: 60%;
-}
-
-.imgPres img{
-    width: 100%;
+.userPres p img{
+    width: 80%;
 }
 
 .contentPres{
-    width: 35%;
+    width: 80%;
 }
 
 /* Style forum */
@@ -538,6 +555,7 @@ nav{
 .comments_content{
     display: flex;
     justify-content: space-between;
+    padding-left: 20px;
 }
 
 .util_info{
@@ -552,10 +570,6 @@ nav{
 .titleNewPost{
     width: 50%;
     margin-bottom: 10px;
-}
-
-.comments_content{
-    padding-left: 20px;
 }
 
 .deleteButton a, #newTopic a{
@@ -610,6 +624,413 @@ nav{
     list-style: none;
     font-size: 1.2em;
 }
+
+.forumCommentContent p{
+    word-break: break-all;
+}
+
+/* Media Queries */
+@media all and (max-width: 1290px){ /*   */
+    .leftBlock{
+        display: block;
+    }
+
+    .phoneContact{
+       display: none;
+    }
+
+    .banner{
+        top: 50px;
+        font-size: 0.8em;
+    }
+
+    .banner a{
+        display: none;
+    }
+
+    #mapId{
+        width: 60%;
+    }
+
+    #block_weatherDetail{
+        width: 40%;
+    }
+}
+
+@media all and (max-width: 1024px){ /*   */
+
+    .leftBlock{
+        width: 30%;
+    }
+
+    .rightBlock{
+        width: 70%;
+    }
+
+    #menuLarge{
+        display: none;
+    }
+
+    #burgerMenu{
+        display: block;
+    }
+
+    /* Style burger Menu */
+    #menuToggle{
+        display: block;
+        position: relative;
+        top: 5px;
+        left: 132px;
+        z-index: 3;
+        -webkit-user-select: none;
+        user-select: none;
+        width: 33px;
+    }
+
+    #menuToggle a
+    {
+    text-decoration: none;
+    color: #232323;
+    transition: color 0.3s ease;
+    }
+
+    #menuToggle a:hover
+    {
+    color: tomato;
+    }
+
+    #menuToggle input
+    {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0; 
+    z-index: 1000; 
+    -webkit-touch-callout: none;
+    }
+
+    #menuToggle span
+    {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    
+    background: #cdcdcd;
+    border-radius: 3px;
+    
+    z-index: 1;
+    
+    transform-origin: 4px 0px;
+    
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
+    }
+
+    #menuToggle span:first-child
+    {
+    transform-origin: 0% 0%;
+    }
+
+    #menuToggle span:nth-last-child(2)
+    {
+    transform-origin: 0% 100%;
+    }
+
+    #menuToggle input:checked ~ span
+    {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
+    }
+
+    #menuToggle input:checked ~ span:nth-last-child(3)
+    {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    #menuToggle input:checked ~ span:nth-last-child(2)
+    {
+    transform: rotate(-45deg) translate(0, -1px);
+    }
+
+    #menu
+    {
+    position: absolute;
+    width: 150px;
+    display: none;
+    margin: 0px 0 100px 0px;
+    background: #ededed;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transform: translate(100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+
+    #menuToggle input:checked ~ #menu
+    {
+    display:block;
+    right: 0px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px black;
+    }
+
+    #menu li
+    {
+    padding: 10px 0;
+    font-size: 22px;
+    }
+
+    #menuToggle input:checked ~ ul
+    {
+    transform: none;
+    }
+
+    .banner{
+        top: 25px;
+    }
+
+    .block_invisible{
+        height: 100px;
+    }
+
+    #mapId{
+        width: 100%;
+    }
+
+    #weather{
+        display: block;
+        margin: auto;
+    }
+
+    #block_weatherDetail{
+        width: 80%;
+        margin: auto;
+    }
+}
+
+@media all and (max-width: 768px){
+    
+    .banner h3{
+        display: none;
+    }
+
+    .banner p{
+        font-size: 1.5em;
+        margin: 20px auto 0px auto;
+    }
+
+    .content_body article{
+        width: 95%;
+    }
+
+    .slideTxt{
+        display: none;
+    }
+
+    .slideImg{
+        width: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .weather{
+        margin-right: 0px;
+        text-align: center;
+    }
+
+    .weather p{
+        width: 100%;
+    }
+
+    .viewPoint, #lesson img, #repair img{
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    #repair img{
+        margin-top: 20px;
+    }
+
+    .moto, .weather, #lesson, #repair{
+        display: block;
+    }
+
+    .detail_moto, .detail_lesson, .detail_repair{
+        width: 90%;
+        margin:auto;
+    }
+
+    .picture_moto{
+        margin-top: 20px;
+    }
+
+    .userPres p img{
+        margin-left: 10%;
+    }
+
+    .comments_content{
+        display: block;
+        padding-right: 20px;
+    }
+
+    .util_info{
+        width: 250px;
+        border-bottom: 1px solid rgb(240,145,0);
+    }
+
+    .forumCommentContent{
+        width: 100%;
+    }
+
+    #mapId{
+        height: 500px;
+        
+    }
+}
+
+@media all and (max-width: 676px){
+
+    header{
+        display: block;
+        height: 70px;
+    }
+
+    .rightBlock{
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .leftBlock{
+        width: 100%;
+    }
+
+    #menuToggle{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media all and (max-width: 599px){
+    
+    .banner{
+        width: 70%;
+    }
+
+    .banner p{
+        margin: 0px auto 0px auto
+    }
+
+    .block_invisible{
+        height: 70px;
+    }
+    
+    #slider_moto{
+        height: 350px;
+    }
+
+    .circuit{
+        display: block;
+    }
+
+    .circuit img{
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .detail_circuit{
+        width: 90%;
+        margin: auto;
+    }
+
+    .contact{
+        display: block;
+    }
+
+    .blockContactForm, .blockContact{
+        width: 100%;
+    }
+
+    .blockContact ul{
+        padding-inline-start: 0px;
+    }
+}
+
+@media all and (max-width: 500px){
+
+    .footer_social_network{
+        padding-inline-start: 0px;
+    }
+
+    .block_invisible{
+        height: 40px;
+    }
+
+    .forum li{
+        display: block;
+        text-align: center;
+    }
+
+    .forum li .titleSection{
+        padding-bottom: 0px;
+    }
+
+    .lastTopic p{
+        margin: 5px 0px 0px 0px;
+    }
+}
+
+@media all and (max-width: 434px){
+   
+    header{
+        height: 105px;
+    }
+}
+
+@media all and (max-width: 425px){
+
+    .banner, .banner_img, .block_invisible{
+        display: none;
+    }
+
+    .midSize{
+        display: block;
+    }
+
+    .titleForum{
+        display: block;
+        text-align: center;
+    }
+
+    .titleButton{
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
+@media all and (max-width: 392px){
+
+    #slider_moto{
+        height: 280px;
+    }
+}
+
+@media all and (max-width: 328px){
+   
+    .footer_block{
+        height: 220px;
+    }
+}
+
 
 
 

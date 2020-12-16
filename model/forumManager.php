@@ -87,7 +87,7 @@ class ForumManager extends Manager
     }
 
     public function getImg($pseudo, $category_id) {
-        $sql = 'SELECT img, title, content FROM topic WHERE author = ? AND category_id = ?';
+        $sql = 'SELECT author, img, title, content FROM topic WHERE author = ? AND category_id = ?';
         $getImg = $this->executerRequete($sql, array($pseudo, $category_id));
         return $getImg; 
     }

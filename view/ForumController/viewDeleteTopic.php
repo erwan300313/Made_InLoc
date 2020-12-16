@@ -34,7 +34,7 @@
 
         <aside>
                 <div class="forumCommentContent">
-                   <p class="deleteButton"><a href="index.php?controller=forum&amp;action=deleteTopic&amp;topic_id=<?=$topic['id']?>&amp;catTopic=<?=$_GET['catTopic']?>&amp;title=<?=$_GET['title']?>">Supprimer ce Post définitivement</a></p>
+                   <p class="deleteButton"><a href="index.php?controller=forum&amp;action=deleteTopic&amp;topic_id=<?=$topic['id']?>&amp;catTopic=<?=$topic['category_id']?>&amp;title=<?=$_GET['title']?>">Supprimer ce Post définitivement</a></p>
                 </div>
             </div>
         </aside>

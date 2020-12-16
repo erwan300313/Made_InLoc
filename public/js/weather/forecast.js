@@ -22,9 +22,6 @@ class Forecast{
 
         let arrayWeather = document.getElementById('arrayPrev');
         arrayWeather.style.marginLeft = '40px';
-
-        let arrayId = document.getElementById('weather');
-        arrayId.style.display='flex';
         
         foreWeather.daily.forEach((weather) =>{
     

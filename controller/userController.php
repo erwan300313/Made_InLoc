@@ -23,21 +23,25 @@ Class UserController extends Controller{
     }
 
     function addUser(){
-        $userCheck = $this->userManager->userCheck($_POST['pseudo']);
-        if($userCheck == false){
-            if($_POST['mail'] == $_POST['mailCheck']){
-                if($_POST['password'] == $_POST['passwordCheck']){
-                    $pass_hache = password_hash($_POST['password'], PASSWORD_DEFAULT);
-                    $this->userManager->addUser($_POST['firstName'], $_POST['lastName'], $_POST['pseudo'], $pass_hache, $_POST['mail'], $_POST['city'], $_POST['birthday'],$_GET['team']);
-                    header('Location: index.php?controller=user&action=userCheck&pseudo=' . $_POST['pseudo'] . '&password=' . $_POST['password']);
-                }else{
-                    throw new Exception('Les saisies de vos adresses mot de pass sont différentes.');
-                }
-            }else{
-                throw new Exception('Les saisies de vos adresses mail sont différentes.');
-            }  
+        if(empty($_POST['lastName']) OR empty($_POST['firstName']) OR empty($_POST['pseudo']) OR empty($_POST['password']) OR empty($_POST['passwordCheck']) OR empty($_POST['mail']) OR empty($_POST['mailCheck']) OR empty($_POST['city']) OR empty($_POST['birthday'])){
+            throw new Exception('Au moins un champ du formulaire d\'inscription est vide.');
         }else{
-            throw new Exception('Votre pseudo est déjà utilisé par un autre utilisateur, veuillez entrer un nouveau pseudo');
+            $userCheck = $this->userManager->userCheck($_POST['pseudo']);
+            if($userCheck == false){
+                if($_POST['mail'] == $_POST['mailCheck']){
+                    if($_POST['password'] == $_POST['passwordCheck']){
+                        $pass_hache = password_hash($_POST['password'], PASSWORD_DEFAULT);
+                        $this->userManager->addUser($_POST['firstName'], $_POST['lastName'], $_POST['pseudo'], $pass_hache, $_POST['mail'], $_POST['city'], $_POST['birthday'],$_GET['team']);
+                        header('Location: index.php?controller=user&action=userCheck&pseudo=' . $_POST['pseudo'] . '&password=' . $_POST['password']);
+                    }else{
+                        throw new Exception('Les saisies de vos adresses mot de pass sont différentes.');
+                    }
+                }else{
+                    throw new Exception('Les saisies de vos adresses mail sont différentes.');
+                }  
+            }else{
+                throw new Exception('Votre pseudo est déjà utilisé par un autre utilisateur, veuillez entrer un nouveau pseudo');
+            }
         }
     }
 
@@ -63,7 +67,7 @@ Class UserController extends Controller{
                 $_SESSION['team'] = $user['team'];
                 $_SESSION['date_inscription'] = $user['date_inscription'];
                 $_SESSION['id'] = $user['id'];
-                header('Location: user/userArea/' . $_GET['category_id']); 
+                header('Location: user/userArea/11'); 
             }else{
                 throw new Exception('Il y as un probleme dans votre mot de pass.');
             }
@@ -71,9 +75,20 @@ Class UserController extends Controller{
     }
 
     public function userArea(){
-        $user = $this->userManager->getUser($_SESSION['pseudo']);
-        $img = $this->forumManager->getImg($_SESSION['pseudo'], $_GET['category_id']);
-        $this->genererVue(array('user' => $user, 'img' => $img));
+        if(isset($_GET['category_id'])){
+            $user = $this->userManager->getUser($_SESSION['pseudo']);
+            $img = $this->forumManager->getImg($_SESSION['pseudo'], $_GET['category_id']);
+            $datas = $img->fetchAll();
+            if(!$user OR $_GET['category_id'] != 11){
+                
+                throw new Exception('Il y as un probleme d\'accès à votre espace personnel 2.' . $_GET['category_id']);
+            }else{
+                $this->genererVue(array('user' => $user, 'datas' => $datas));
+            } 
+        }else{
+            throw new Exception('Il y as un probleme d\'accès à votre espace personnel 1.');
+        }
+        
     }
 
     public function addPicture(){

@@ -14,25 +14,6 @@
 <section class="content_body">  
     <article>
         <aside>
-            <h4 class="titleForm titleForum"><?=htmlspecialchars($topic['title'])?> le <?=htmlspecialchars($topic['date_creation'])?></h4>
-            <div class="comments_content">
-                <p class="util_info">
-                    Par : <?=htmlspecialchars($topic['author'])?><br/>
-                    Inscrit(e): <?=htmlspecialchars($topic['author_inscription'])?><br/>
-                    Groupe : 
-                        <?php 
-                        if($topic['author_team'] == 2){
-                    ?>
-                    Utilisateur
-                    <?php
-                    }
-                    ?>
-                </p>
-                <div class="forumCommentContent"><?=nl2br(html_entity_decode($topic['content']))?></div>
-            </div>
-        </aside>
-
-        <aside>
             <h4 class="titleForm titleForum">
                 <div>Réponse du <?=htmlspecialchars($comment['date_creation'])?></div>
             </h4>
@@ -51,7 +32,7 @@
                 </p>
                 <div class="forumCommentContent">
                    <p><?=nl2br(html_entity_decode($comment['content']))?></p>
-                   <p class="deleteButton"><a href="index.php?controller=forum&amp;action=deleteComment&amp;title=<?=$_GET['title']?>&amp;topic_id=<?=$topic['id']?>&amp;comment_id=<?=$comment['id']?>">Supprimer ce commentaire définitivement</a></p>
+                   <p class="deleteButton"><a href="index.php?controller=forum&amp;action=deleteComment&amp;title=<?=$_GET['title']?>&amp;topic_id=<?=$comment['topic_id']?>&amp;comment_id=<?=$comment['id']?>">Supprimer ce commentaire définitivement</a></p>
                 </div>
             </div>
         </aside>

@@ -29,9 +29,9 @@
                     </div>
                 </div>
             <p>Point de vue de cette balade</p>
-            <img src="public/img/viewpoint/<?=htmlspecialchars($data['picture1'])?>.jpg" alt="<?=htmlspecialchars($data['picture1'])?>">
-            <img src="public/img/viewpoint/<?=htmlspecialchars($data['picture2'])?>.jpg" alt="<?=htmlspecialchars($data['picture2'])?>">
-            <img src="public/img/viewpoint/<?=htmlspecialchars($data['picture3'])?>.jpg" alt="<?=htmlspecialchars($data['picture3'])?>">
+            <p><img class="viewPoint" src="public/img/viewpoint/<?=htmlspecialchars($data['picture1'])?>.jpg" alt="<?=htmlspecialchars($data['picture1'])?>"></p>
+            <p><img class="viewPoint" src="public/img/viewpoint/<?=htmlspecialchars($data['picture2'])?>.jpg" alt="<?=htmlspecialchars($data['picture2'])?>"></p>
+            <p><img class="viewPoint" src="public/img/viewpoint/<?=htmlspecialchars($data['picture3'])?>.jpg" alt="<?=htmlspecialchars($data['picture3'])?>"></p>
             </article>
         <?php 
         }

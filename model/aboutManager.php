@@ -5,9 +5,9 @@ require_once("framework/model.php");
 
 class AboutManager extends Manager
 {
-    public function getPrice($type){
-        $sql = 'SELECT type, duration, price, km_included, extra_day, caution FROM rent WHERE type = ?';
-        $getPrice = $this->executerRequete($sql, array($type));
+    public function getPrice(){
+        $sql = 'SELECT * FROM rent';
+        $getPrice = $this->executerRequete($sql);
         return $getPrice;
     }
 

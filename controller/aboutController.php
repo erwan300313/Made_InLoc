@@ -19,19 +19,31 @@ Class AboutController extends Controller{
     }
 
     public function AboutRent(){
-        $get125Price = $this->aboutManager->getPrice(125);
-        $get800Price = $this->aboutManager->getPrice(800);
-        $this->genererVue(array('get125Price' => $get125Price, 'get800Price' => $get800Price)); 
+        $datas = $this->aboutManager->getPrice();
+        $getPrices = $datas->fetchAll();
+        if(!$datas){
+            throw new Exception("Une erreur s'est produite lors du chargement de la page");
+        }else{
+            $this->genererVue(array('getPrices' => $getPrices));
+        }
     }
 
     public function AboutCircuit(){
         $circuits = $this->aboutManager->getCircuits();
-        $this->genererVue(array('circuits' => $circuits)); 
+        if(!$circuits){
+            throw new Exception("Une erreur s'est produite lors du chargement de la page");
+        }else{
+            $this->genererVue(array('circuits' => $circuits)); 
+        }
     }
 
     public function AboutModel(){
         $motos = $this->aboutManager->getMotos();
-        $this->genererVue(array('motos' => $motos)); 
+        if(!$motos){
+            throw new Exception("Une erreur s'est produite lors du chargement de la page");
+        }else{
+           $this->genererVue(array('motos' => $motos));  
+        }
     }
 
     public function AboutLesson(){
