@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="utf-8" />
         <base href="<?= $racineWeb ?>" >
         <title><?= $title ?></title>
+        <link rel="shortcut icon" type="image/x-icon" href="public/img/diver/favicon.ico">
         <link href="public/style/style.css" rel="stylesheet" /> 
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/fc001796a0.js" crossorigin="anonymous"></script>
@@ -16,9 +17,10 @@
        <script src="https://cdn.tiny.cloud/1/qv7aonmkdnd5f4ghrx4sugtxakuuiam2zc5ho2e03n55ttk0/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
        <script>
             tinymce.init({
-            selector: 'textarea',
-            plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
-            toolbar_mode: 'floating',
+                selector: 'textarea',
+                plugins: 'advlist image',
+                toolbar_mode: 'floating',
+                language: 'fr_FR',
             });
         </script>
         <meta name="viewport" content="width=device-width" />
@@ -43,14 +45,14 @@
                     <?php
                     }else{
                     ?>
-                    <p><a href="user/userLogin"><i class="far fa-user"></i> Se connecter</a> / <a href="user/userRegistration"><i class="fas fa-sign-in-alt"></i> S'inscrire</a></p>
+                    <p><a href="user/userLogin/"><i class="far fa-user"></i> Se connecter</a> / <a href="user/userRegistration/"><i class="fas fa-sign-in-alt"></i> S'inscrire</a></p>
                     <?php
                     }
                     ?>
                 </div>
             </div>
             <div class="leftBlock">
-                <nav id="burgerMenu" role="navigation">
+                <nav id="burgerMenu">
                         <div id="menuToggle">
                         <input type="checkbox" />
                         <span></span>
@@ -58,20 +60,20 @@
                         <span></span>
                         <ul id="menu">
                             <li class="buttonMenu"><a href="index.php">Accueil</a></li>
-                            <li class="buttonMenu"><a href="about/aboutIndex">A propos</a></li>
-                            <li class="buttonMenu"><a href="about/aboutMeteo">Météo</a></li>
-                            <li class="buttonMenu"><a href="forum/forumIndex">Forum</a></li>
-                            <li class="buttonMenu"><a href="contact/contactIndex">Contact</a></li>
+                            <li class="buttonMenu"><a href="about/aboutIndex/">A propos</a></li>
+                            <li class="buttonMenu"><a href="about/aboutMeteo/">Météo</a></li>
+                            <li class="buttonMenu"><a href="forum/forumIndex/">Forum</a></li>
+                            <li class="buttonMenu"><a href="contact/contactIndex/">Contact</a></li>
                         </ul>
                     </div>
                 </nav>
                 <nav id="menuLarge">
                     <ul class="menu">
                         <li class="buttonMenu"><a href="index.php">Accueil</a></li>
-                        <li class="buttonMenu"><a href="about/aboutIndex">A propos</a></li>
-                        <li class="buttonMenu"><a href="about/aboutMeteo">Météo</a></li>
-                        <li class="buttonMenu"><a href="forum/forumIndex">Forum</a></li>
-                        <li class="buttonMenu"><a href="contact/contactIndex">Contact</a></li>
+                        <li class="buttonMenu"><a href="about/aboutIndex/">A propos</a></li>
+                        <li class="buttonMenu"><a href="about/aboutMeteo/">Météo</a></li>
+                        <li class="buttonMenu"><a href="forum/forumIndex/">Forum</a></li>
+                        <li class="buttonMenu"><a href="contact/contactIndex/">Contact</a></li>
                     </ul>
                 </nav>
                 <div class="phoneContact"><i class="fas fa-phone-square-alt fa-2x"></i><p class="phoneNum">0696 12 34 56</p></div>

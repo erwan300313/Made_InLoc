@@ -13,24 +13,6 @@
 
 <section class="content_body">  
     <article>
-        <aside>
-            <h4 class="titleForm titleForum"><?=htmlspecialchars($topic['title'])?> le <?=htmlspecialchars($topic['date_creation'])?></h4>
-            <div class="comments_content">
-                <p class="util_info">
-                    Par : <?=htmlspecialchars($topic['author'])?><br/>
-                    Inscrit(e): <?=htmlspecialchars($topic['author_inscription'])?><br/>
-                    Groupe : 
-                        <?php 
-                        if($topic['author_team'] == 2){
-                    ?>
-                    Utilisateur
-                    <?php
-                    }
-                    ?>
-                </p>
-                <div class="forumCommentContent"><?=nl2br(html_entity_decode($topic['content']))?></div>
-            </div>
-        </aside>
 
         <aside>
             <h4 class="titleForm titleForum">
@@ -50,7 +32,7 @@
                     ?>
                 </p>
                 <div class="forumCommentContent">
-                    <form method="POST" action="index.php?controller=forum&amp;action=updateComment&amp;title=<?=$_GET['title']?>&amp;comment_id=<?=$comment['id']?>&amp;catTopic=<?=$topic['id']?>" enctype="multipart/form-data" id="editCommentArea">
+                    <form method="POST" action="index.php?controller=forum&amp;action=updateComment&amp;title=<?=$_GET['title']?>&amp;comment_id=<?=$comment['id']?>&amp;catTopic=<?=$comment['topic_id']?>" enctype="multipart/form-data" id="editCommentArea">
                         <textarea id="content" name="content"rows="5" cols="33"><?=nl2br(html_entity_decode($comment['content']))?></textarea><br />
                         <input type= "submit" name="chargement" value="Envoyer le commentaire modifier">
                     </form>

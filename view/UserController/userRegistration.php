@@ -55,7 +55,7 @@
                 </li>
                 <li>
                     <label for="birthday" class="labFormReg">Date de naissance </label>
-                    <input type="text" id="birthday" name="birthday"/><br />
+                    <input type="date" id="birthday" name="birthday"/><br />
                 </li>
             </ul>
             

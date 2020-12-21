@@ -36,7 +36,7 @@ Class ContactController extends Controller{
             $mail->setFrom('e.bridier@hotmail.com', 'MadInLoc');
             $mail->addAddress('e.bridier@hotmail.com', 'Erwan');
             $mail->isHTML(true);                               
-            $mail->Subject = 'Sujet du mail : ' . utf8_decode($_POST['subject']);
+            $mail->Subject = 'Sujet du mail : ' . $_POST['subject'];
             $mail->Body    = 'Nom : ' . $_POST['lastName'] . '<br>Prénom : ' . $_POST['firstName'] . '<br>Mail : ' . $_POST['mail'] . '<br>Téléphone : ' . $_POST['tel'] . '<br>Contenue du message : ' . $_POST['content'];
             $mail->send();
             if(!$mail){

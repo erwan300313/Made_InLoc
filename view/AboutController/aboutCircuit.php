@@ -15,7 +15,7 @@
     <?php
         while ($data = $circuits->fetch()){
         ?>
-            <article id="circuit">
+            <article class="circuits">
                 <div class="circuit">
                     <img src="public/img/circuit/<?=htmlspecialchars($data['map'])?>.png" alt="<?=htmlspecialchars($data['map'])?>">
                     <div class="detail_circuit">
@@ -29,9 +29,9 @@
                     </div>
                 </div>
             <p>Point de vue de cette balade</p>
-            <p><img class="viewPoint" src="public/img/viewpoint/<?=htmlspecialchars($data['picture1'])?>.jpg" alt="<?=htmlspecialchars($data['picture1'])?>"></p>
-            <p><img class="viewPoint" src="public/img/viewpoint/<?=htmlspecialchars($data['picture2'])?>.jpg" alt="<?=htmlspecialchars($data['picture2'])?>"></p>
-            <p><img class="viewPoint" src="public/img/viewpoint/<?=htmlspecialchars($data['picture3'])?>.jpg" alt="<?=htmlspecialchars($data['picture3'])?>"></p>
+            <p><img src="public/img/viewPoint/<?=htmlspecialchars($data['picture1'])?>.jpg" class="viewPoint" alt="<?=htmlspecialchars($data['picture1'])?>"></p>
+            <p><img src="public/img/viewPoint/<?=htmlspecialchars($data['picture2'])?>.jpg" class="viewPoint" alt="<?=htmlspecialchars($data['picture2'])?>"></p>
+            <p><img src="public/img/viewPoint/<?=htmlspecialchars($data['picture3'])?>.jpg" class="viewPoint" alt="<?=htmlspecialchars($data['picture3'])?>"></p>
             </article>
         <?php 
         }

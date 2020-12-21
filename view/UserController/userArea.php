@@ -20,6 +20,7 @@
                     <li>Prénom : <?=htmlspecialchars($user['first_name'])?></li>
                     <li>Pseudo : <?=htmlspecialchars($user['pseudo'])?></li>
                     <li>Mail : <?=htmlspecialchars($user['mail'])?></li>
+                    <li>Date d'insciption : <?=htmlspecialchars($user['date_inscription'])?></li>
                     <li>Type de membre : <?=$user['team']?></li>
                 </ul>
             </aside>

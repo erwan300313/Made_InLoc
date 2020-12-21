@@ -106,12 +106,11 @@ Class ForumController extends Controller{
     }
 
     public function editComment(){
-        $topic = $this->forumManager->getTopic($_GET['topic_id']);
         $comment = $this->forumManager->getComment($_GET['catTopic']);
         if($comment['author'] != $_SESSION['pseudo']){
             throw new Exception('Vous ne pouver pas modifier un commentaire dont vous n\'etes pas l\'auteur.');
         }else{
-            $this->genererVue(array('topic' => $topic, 'comment' => $comment, 'title' => $_GET['title']));
+            $this->genererVue(array('comment' => $comment, 'title' => $_GET['title']));
         }
     }
 

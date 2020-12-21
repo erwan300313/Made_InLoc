@@ -17,7 +17,7 @@ class UserManager extends Manager
     }
     
     public function getUser($pseudo) {
-        $sql = 'SELECT *, DATE_FORMAT(date_inscription, \'%d/%m/%Y\') AS date_inscription FROM user WHERE pseudo = ? ';
+        $sql = 'SELECT *, DATE_FORMAT(date_inscription, \'%d/%m/%Y\') AS date_inscription, DATE_FORMAT(birthday, \'%d/%m/%Y\') AS birthday FROM user WHERE pseudo = ? ';
         $getUser = $this->executerRequete($sql, array($pseudo));
         return $getUser->fetch(); 
     }

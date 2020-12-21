@@ -319,7 +319,7 @@ nav{
     justify-content: space-around;
 }
 
-#smallSize ,#circuit, #moto{
+#smallSize ,.circuits, #moto{
     border-bottom: 2px solid rgb(169,69,19);
 }
 .smallSize li, .midSize li{
@@ -812,8 +812,8 @@ nav{
     }
 
     #block_weatherDetail{
-        width: 80%;
-        margin: auto;
+        width: 100%;
+        margin-left: 2%;
     }
 }
 
