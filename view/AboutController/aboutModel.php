@@ -25,7 +25,7 @@
                         <p><?=nl2br(html_entity_decode($data['engine_detail']))?></p>
                         <h4>Caractéristique Chassis:</h4>
                         <p><?=nl2br(html_entity_decode($data['fram_detail']))?></p>
-                        <a href="">Nous contacter</a>
+                        <a href="contact/contactIndex/">Nous contacter</a>
                     </div>
                     <div class="picture_moto">
                         <img src="public/img/moto/<?=htmlspecialchars($data['picture1'])?>" alt="<?=htmlspecialchars($data['picture1'])?>">

@@ -20,7 +20,7 @@
             <p id="newTopic"><a href="">Ajouter un nouveau commentaire</a></p>
             <form method="POST" action="index.php?controller=forum&amp;action=addComment&amp;catTopic=<?=$topic['id']?>&amp;author=<?=$_SESSION['pseudo']?>&amp;author_team=<?=$_SESSION['team']?>&amp;author_inscription=<?=$_SESSION['date_inscription']?>&amp;title=<?=$_GET['title']?>" enctype="multipart/form-data" id="formTopic">
                 <textarea id="content" name="content"rows="5" cols="33" placeholder="Rédiger votre commentaire ici"></textarea><br />
-                <input type= "submit" name="chargement" value="Envoyer le commentaire">
+                <input type= "submit" name="chargement" value="Envoyer le commentaire" class="choiseButton">
             </form>
         <?php
         }

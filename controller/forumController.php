@@ -9,21 +9,21 @@ Class ForumController extends Controller{
         $this->forumManager = new ForumManager();
         $this->userManager = new UserManager();
     }
-   
+    
     public function index(){
         $this->genererVue(array()); 
     }
 
     public function forumIndex(){
         $titles = $this->forumManager->getIndexTitles();
-        $lastTopics = $this->forumManager->getLastTopic();        
+        $lastTopics = $this->forumManager->getLastTopics();        
         $datas = $titles->fetchAll();
         if(!$titles){
             throw new Exception('Un problème est survenue lors de l\'accès à notre forum, nous mettons tout en oeuvre pour régler cela au plus vite.');
         }
         $this->genererVue(array('datas' => $datas, 'lastTopics' =>$lastTopics)); 
     }
-
+    
     public function forumTopic(){
         $datas = $this->forumManager->getTopics($_GET['catTopic']);
         $topics = $datas->fetchAll();
@@ -72,6 +72,8 @@ Class ForumController extends Controller{
     public function deleteTopic(){
         if(isset($_GET['topic_id'])){
             $this->forumManager->deleteTopic($_GET['topic_id']);
+            $lastTopic = $this->forumManager->getLastTopic($_GET['catTopic']);
+            $this->forumManager->addLastTopic($lastTopic['title'], $_GET['catTopic']);
             header('Location: forum/forumTopic/'. $_GET['title'] . '/' . $_GET['catTopic']);
         }else{
             throw new Exception('Un problème est survenue pendant la suppression du post.');

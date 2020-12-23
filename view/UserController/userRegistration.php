@@ -59,7 +59,7 @@
                 </li>
             </ul>
             
-            <input type="submit" value="Valider votre saisie" id=""/>            
+            <input type="submit" value="Valider votre saisie" class="choiseButton"/>            
         </form>
     </article>
 </section>

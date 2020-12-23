@@ -492,7 +492,7 @@ nav{
 /* Style choiseButton */
 
 .choiseButton{
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 /* Style userPresentation */
@@ -552,6 +552,13 @@ nav{
     padding-right: 20px;
 }
 
+.lastTopic{
+    width: 30%;
+    overflow: hidden ;
+    text-overflow: ellipsis ;
+    white-space: nowrap ;
+}
+
 .comments_content{
     display: flex;
     justify-content: space-between;
@@ -572,7 +579,7 @@ nav{
     margin-bottom: 10px;
 }
 
-.deleteButton a, #newTopic a{
+.deleteButton a, #newTopic a, .choiseButton{
     text-decoration: none;
     color: white;
     text-shadow: 1px 1px 2px black;
@@ -584,6 +591,10 @@ nav{
 
 #formTopic{
     display: none;
+}
+
+input[type="submit" i] {
+    font-size: 1em;
 }
 
 /* Contact Form style */
@@ -983,7 +994,13 @@ nav{
         padding-bottom: 0px;
     }
 
-    .lastTopic p{
+    .forum li .lastTopic{
+        width: 90%;
+        padding: 0px;
+        margin: auto;
+    }
+
+    .lastTopic{
         margin: 5px 0px 0px 0px;
     }
 }

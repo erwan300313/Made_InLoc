@@ -35,11 +35,11 @@
                 <h4 class="titleForm">Présentation de tes engins</h4>
 
                 <form method="POST" action="index.php?controller=user&amp;action=addPicture&amp;category_id=11" enctype="multipart/form-data" class="formPres">
-                    <input type="file" name="monfichier" value="" class="choiseButton"><br />
+                    <input type="file" name="monfichier" value="file" class="choiseButton"><br />
                     <label for="title">Titre</label>
                     <input type="text" id="title" name="title" class="titleNewPost"/><br />
                     <textarea id="content" name="content"rows="5" cols="33" placeholder="Décrivez votre bolide en détail ..."></textarea><br />
-                    <input type= "submit" name="chargement" value="charger le fichier">
+                    <input type= "submit" name="chargement" value="Poster votre présentation" class="choiseButton">
                 </form>
             </aside>
             <aside>

@@ -27,7 +27,7 @@ class Map{
     
     initMap(){        
 
-       this.myMap = L.map(this.id,{scrollWheelZoom: false, dragging: false}).setView([this.lat, this.lon], this.zoom);
+       this.myMap = L.map(this.id,{scrollWheelZoom: false}).setView([this.lat, this.lon], this.zoom);
         
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',{
             id: 'erwanb/ckfzysim40tf51apc3zxcyuwr',

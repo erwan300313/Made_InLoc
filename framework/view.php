@@ -1,5 +1,7 @@
 <?php
 
+require_once 'framework/configuration.php';
+
 class ViewManager {
 
 private $file;
@@ -30,7 +32,7 @@ private function generateFile($file, $data) {
     return ob_get_clean();
     }
     else {
-    throw new Exception("Fichier '$file' introuvable");
+    throw new Exception("La page que vous souhaiter atteindre n'est pas disponible");
     }
 }
 }

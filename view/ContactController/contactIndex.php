@@ -54,7 +54,7 @@
                     <span id="contentSpan"></span>
                     <br />
                 </ul>
-                <input type="submit" value="Valider votre message" id=""/>            
+                <input type="submit" value="Valider votre message" class="choiseButton"/>            
             </form>
         </aside>  
         

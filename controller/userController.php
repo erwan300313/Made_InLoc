@@ -81,19 +81,18 @@ Class UserController extends Controller{
             $datas = $img->fetchAll();
             if(!$user OR $_GET['category_id'] != 11){
                 
-                throw new Exception('Il y as un probleme d\'accès à votre espace personnel 2.' . $_GET['category_id']);
+                throw new Exception('Il y as un probleme d\'accès à votre espace personnel');
             }else{
                 $this->genererVue(array('user' => $user, 'datas' => $datas));
             } 
         }else{
-            throw new Exception('Il y as un probleme d\'accès à votre espace personnel 1.');
+            throw new Exception('Il y as un probleme d\'accès à votre espace personnel');
         }
         
     }
 
     public function addPicture(){
         if($_FILES['monfichier']['error'] == 0){
-            ?> <pre><?php print_r($_POST) ?> </pre> <?php
             if($_FILES['monfichier']['size'] > 1500000){
                 $error = "Votre fichier est trop lourd.";
             }
@@ -103,14 +102,12 @@ Class UserController extends Controller{
             }
             if(!isset($error)){
                 move_uploaded_file($_FILES['monfichier']['tmp_name'], 'public/img/user_img/'.$_FILES['monfichier']['name']);
-                echo "le fichier est chargé";
+                $this->forumManager->addimg($_SESSION['pseudo'], $_SESSION['date_inscription'], $_SESSION['team'], $_GET['category_id'], $_POST['title'], $_POST['content'], $_FILES['monfichier']['name']);
+                header('Location: index.php?controller=user&action=userArea&category_id=' . $_GET['category_id']);
             }
         }else{
             throw new Exception('Il y un probleme avec l\'image que vous souahitez enregistrer.');
         }
-
-        $this->forumManager->addimg($_SESSION['pseudo'], $_SESSION['date_inscription'], $_SESSION['team'], $_GET['category_id'], $_POST['title'], $_POST['content'], $_FILES['monfichier']['name']);
-        header('Location: index.php?controller=user&action=userArea&category_id=' . $_GET['category_id']);
     }
     
     function logOut(){

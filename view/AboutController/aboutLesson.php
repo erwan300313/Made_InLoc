@@ -22,7 +22,7 @@
                 <p>Notre circuit qui reproduit fidèlement les conditions de passage du permis de conduire moto, vous permettra d'être rapidement à l'aise à allure réduite mais aussi plus soutenue. 2 sessions d'une heure permettent d'appréhender de manière sereine l'utilisation de la moto. Un stage de quelques heures fera de vous un pilote aguerri.</p>
                 <p>Attention !!! Les leçons et conseil dispenser au cours de ces sessions ne dispensent pas de permis de conduire pour rouler sur route ouverte.
                 </p>
-                <a href="">Nous contacter</a>
+                <a href="contact/contactIndex/">Nous contacter</a>
             </div>
         </aside>
     </article>

@@ -21,7 +21,7 @@
                 <p>Nos mécanos sont prêts à tout pour le bonheur de votre fidèle destrier. </p>
                 <p>Nous travaillons sur tout type de modèle et sur toutes les grandes marques connues, agréé Kawasaki, Yamaha et Honda nous réaliserons tout type d'intervention et conserverons la garantie constructrice de votre moto.
                 </p>
-                <a href="">Nous contacter</a>
+                <a href="contact/contactIndex/">Nous contacter</a>
             </div>
             <img src="public/img/diver/atelier.jpg">
         </aside>

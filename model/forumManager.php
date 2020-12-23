@@ -16,11 +16,17 @@ class ForumManager extends Manager
         $addLastTopic = $this->executerRequete($sql, array($title, $category_id));
     } 
 
-    public function getLastTopic() {
+    public function getLastTopics() {
         $sql = 'SELECT * FROM forumIndex ORDER BY id DESC';
-        $getLastTopic = $this->executerRequete($sql, array());
-        return $getLastTopic;
-    } 
+        $getLastTopics = $this->executerRequete($sql, array());
+        return $getLastTopics;
+    }
+
+    public function getLastTopic($category_id) {
+        $sql = 'SELECT * FROM topic WHERE category_id = ? ORDER BY date_creation DESC LIMIT 1';
+        $getLastTopic = $this->executerRequete($sql, array($category_id));
+        return $getLastTopic->fetch();
+    }
 
     public function getTopics($category_id){
         $sql = 'SELECT *, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_creation  FROM topic WHERE category_id = ? ORDER BY id DESC';
@@ -31,7 +37,7 @@ class ForumManager extends Manager
     public function getTopic($topic_id){
         $sql = 'SELECT *, author_inscription, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_creation  FROM topic WHERE id = ?';
         $getTopic = $this->executerRequete($sql, array($topic_id));
-        return $getTopic->fetch();;
+        return $getTopic->fetch();
     }
 
     public function updateTopic($topic_id, $content) {
