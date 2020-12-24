@@ -24,19 +24,19 @@
             <div class="service">
                 <i class="fas fa-route"></i>
                 <h3>Circuit decouverte</h3>
-                <p>Decouvrez la martinique grace à un de nos nombreux circuit decouverte.</p>
+                <p>Découvrez la Martinique grâce à un de nos nombreux circuits.</p>
                 <a href="about/aboutCircuit/">En savoir plus</a>
             </div>
             <div class="service">
                 <i class="fas fa-biking"></i>
                 <h3>Technique</h3>
-                <p>Vous voullez avoir plus d'info sur un de nos modèls ?</p>
+                <p>Vous voulez avoir plus d'infos sur un de nos modèles ?</p>
                 <a href="about/aboutModel/">En savoir plus</a>
             </div>
             <div class="service">
                 <i class="fas fa-graduation-cap"></i>
                 <h3>Initiation</h3>
-                <p>Vous n'avez jamais fait de moto ? Vennez essayer chez nous</p>
+                <p>Vous n'avez jamais fait de moto. Venez essayer chez nous.</p>
                 <a href="about/aboutLesson/">En savoir plus</a>
             </div>
             <div class="service">
@@ -48,7 +48,7 @@
             <div class="service">
                 <i class="fas fa-tachometer-alt"></i> 
                 <h3>Préparation</h3>
-                <p>Nous préparons votre moto aux petit oignon celon vos gout et vos souhait.</p>
+                <p>Nous préparons votre moto aux petits oignons selon vos gouts et vos souhaits.</p>
                 <a href="about/aboutCustom/">En savoir plus</a>
             </div>  
         </aside>

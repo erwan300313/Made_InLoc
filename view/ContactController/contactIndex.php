@@ -62,7 +62,7 @@
             <ul>
                 <h4 class="titleForm">Information de contact</h4>
                 <li>Nous sommes ouvert de 8h à 20h du lundi au samedi.</li>
-                <li>Notre équippe technique est disponible 7j/7 de 8h à 22h.</li>
+                <li>Notre équipe technique est disponible 7j/7 de 8h à 22h.</li>
                 <h4 class="titleForm">Adresse</h4>
                 <li>8 rue Caritan 97227 Saint Anne</li>
                 <h4 class="titleForm">Téléphone</h4>

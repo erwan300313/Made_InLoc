@@ -24,17 +24,17 @@
             <div class="service">
                 <i class="fas fa-route"></i>
                 <h3>Circuit decouverte</h3>
-                <p>Decouvrez la martinique grace à un de nos nombreux circuit decouverte.</p>
+                <p>Découvrez la Martinique grâce à un de nos nombreux circuits.</p>
             </div>
             <div class="service">
                 <i class="fas fa-biking"></i>
                 <h3>Technique</h3>
-                <p>Vous voullez avoir plus d'info sur un de nos modèls ?</p>
+                <p>Vous voulez avoir plus d'infos sur un de nos modèles ?</p>
             </div>
             <div class="service">
                 <i class="fas fa-graduation-cap"></i>
                 <h3>Initiation</h3>
-                <p>Vous n'avez jamais fait de moto ? Vennez essayer chez nous</p>
+                <p>Vous n'avez jamais fait de moto. Venez essayer chez nous.</p>
             </div>
             <div class="service">
                 <i class="fas fa-tools"></i>
@@ -44,7 +44,7 @@
             <div class="service">
                 <i class="fas fa-tachometer-alt"></i> 
                 <h3>Préparation</h3>
-                <p>Nous préparons votre moto aux petit oignon celon vos gout et vos souhait.</p>
+                <p>Nous préparons votre moto aux petits oignons selon vos gouts et vos souhaits.</p>
             </div>    
         </aside>
     </article>
@@ -52,7 +52,7 @@
         <h2>Consultez la meteo</h2>
         <aside class="weather">
             <img src="public/img/map/map.png" alt="">    
-            <p>Pour que votre experience soit parfaite nous vous conseillons de consulter les prévisions météo avant de nous contacter.<br /><br /> Deux saisons découpent l’année en martinique : une saison sèche de décembre à avril, où le temps est ensoleillé, ponctué de quelques pluies d’orage, et où les températures avoisinent 27°C, et une saison humide entre juin et novembre, avec une atmosphère plus lourde, des températures aux environs de 30°C et des précipitations fréquentes.</p>
+            <p>Pour que votre expérience soit parfaite nous vous conseillons de consulter les prévisions météo avant de nous contacter.<br /><br /> Deux saisons découpent l’année en Martinique : une saison sèche de décembre à avril, où le temps est ensoleillé, ponctué de quelques pluies d’orage, et où les températures avoisinent 27°C, et une saison humide entre juin et novembre, avec une atmosphère plus lourde, des températures aux environs de 30°C et des précipitations fréquentes.</p>
         </aside>   
     </article>
     <article class="slider_moto">
